@@ -1,13 +1,59 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root{
+  --baby-blue: #68BBE3;
+  --blue-grotto: #0E86D4;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  font-family: 'Ubuntu', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--blue-grotto);
+}
+
+#root {
+  margin: 10%;
+}
+.app-container .collector-container, .resume-container{
+  background-color: var(--baby-blue);
+  padding: 2% 5% 5%;
+}
+
+.collector, 
+.personal-wrapper, 
+.education-wrapper,
+.education-unit-wrapper, 
+.workexp-wrapper
+.workexp-unit-wrapper
+{
+  display: flex;
+  flex-direction: column;
+}
+
+.education-wrapper, .workexp-wrapper{
+  row-gap: 1rem;
+}
+
+.line-breaker{
+  height: 4rem;
+  background-color: var(--blue-grotto);
+}
+
+.resume-personal, .qualification{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-bottom: 1rem;
+}
+
+.resume-personal-base, .resume-education{
+  text-align: left;
+}
+
+.resume-personal-contact{
+  text-align: right;
+}
+
+h2, h3, h4, h5, h6 {
+  margin-top: .5rem;
+  margin-bottom: .5rem;
 }
