@@ -1,4 +1,4 @@
-const Section  = ({name}) =>{
+const SectionBreaker  = ({name}) =>{
     return (
         <div className="section">
             <h3>{name}</h3>
@@ -6,4 +6,4 @@ const Section  = ({name}) =>{
     )
 }
 
-export default Section;
+export default SectionBreaker;

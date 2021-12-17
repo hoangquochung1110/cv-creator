@@ -1,29 +1,20 @@
-import EducationUnit from './EducationUnit';
-import WorkExpUnit from './WorkExpUnit';
-import Section from '../Section/Section';
+import SectionBreaker from '../Section/SectionBreaker';
+import Education from '../Section/Education';
+import WorkExp from '../Section/WorkExp';
+import Skills from '../Section/Skills';
 
-const Qualification = ({education, workExp}) => {
+const Qualification = ({education, workExp, skills}) => {
+    console.log(skills);
     return (
         <div className="qualification">
-            <Section name="Education"/>
-            <div className='resume-education'>
-                { education.map((educationUnit) => {
-                        console.log(educationUnit);
-                        return (
-                            <EducationUnit key={educationUnit.id} educationUnit={educationUnit}/>
-                        )
-                })}
-            </div>
+            <SectionBreaker name="Education"/>
+            <Education education={education} />
 
-            <Section name="Work Experience" />
+            <SectionBreaker name="Work Experience" />
+            <WorkExp workExp={workExp} />
 
-            { <div className='resume-workexp'>
-                { workExp.map((workExpUnit) => {
-                    return (
-                        <WorkExpUnit key={workExpUnit.id} workExpUnit={workExpUnit} />
-                    )
-                })}
-            </div> }
+            <SectionBreaker name="Skills" />
+            <Skills skills={skills} />
 
         </div>
     )
