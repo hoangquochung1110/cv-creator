@@ -14,6 +14,7 @@ const CollectorContainer = ({
 
     onAddWorkExp,
     onDeleteWorkExp,
+    onChangeWorkExp,
 
     onAddSkills,
     onDeleteSkills,
@@ -38,6 +39,7 @@ const CollectorContainer = ({
                     workExp={collection.workExp}
                     onAddWorkExp={onAddWorkExp}
                     onDeleteWorkExp={onDeleteWorkExp}
+                    onChangeWorkExp={onChangeWorkExp}
                 />
                 <h3>Skills</h3>
                 <Skills 

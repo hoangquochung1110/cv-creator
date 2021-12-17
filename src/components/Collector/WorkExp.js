@@ -3,7 +3,8 @@ import WorkExpUnit from './Units/WorkExpUnit';
 const WorkExp = ({
     workExp,
     onAddWorkExp,
-    onDeleteWorkExp
+    onDeleteWorkExp,
+    onChangeWorkExp
 }) => {
     return (
         <div className="workexp-wrapper">
@@ -15,6 +16,7 @@ const WorkExp = ({
                         isDefaultUnit={workExpUnit.isDefaultUnit}
                         onAddWorkExp={onAddWorkExp}
                         onDeleteWorkExp={onDeleteWorkExp}
+                        onChangeWorkExp={onChangeWorkExp}
                     />
                 )
 

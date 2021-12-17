@@ -78,6 +78,23 @@ const Main = () => {
             return {...prevCollection, workExp: [...newWorkExp]};
         })
     }
+
+    const changeWorkExpHandler = (e, id) => {
+        setCollection((prevCollection) => {
+            const newWorkExp = prevCollection.workExp.map((workExpUnit) => {
+                if(workExpUnit.id === id){
+                    workExpUnit[e.target.name] = e.target.value;
+                } 
+                return workExpUnit;
+            });
+
+            return {
+                ...prevCollection,
+                workExp: [...newWorkExp]
+            }                
+        })
+    }
+
     const addSkillsHandler = () => {
         const newKey = uniqid();
         setCollection((prevCollection) => ({
@@ -122,6 +139,7 @@ const Main = () => {
 
                     onAddWorkExp={addWorkExpHandler}
                     onDeleteWorkExp={deleteWorkExpHandler}
+                    onChangeWorkExp={changeWorkExpHandler}
 
                     onAddSkills={addSkillsHandler}
                     onDeleteSkills={deleteSkillsHandler}
@@ -138,10 +156,10 @@ const emptyCollection = {
         id: uniqid(),
         lname: 'Adams',
         fname: 'John',
-        jobtitle: 'Software Developer',
         address: 'Orange County, CA',
         email: 'ajohn@example.com',
-        telephone: '84 934099412'
+        telephone: '84 934099412',
+        github: 'example@github'
     },
     'education': [ 
         {   
