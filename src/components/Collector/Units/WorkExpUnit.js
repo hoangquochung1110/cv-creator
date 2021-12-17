@@ -1,4 +1,4 @@
-import { TextInput } from "../Inputs/Inputs"
+import { TextInput, TextArea } from "../Inputs/Inputs"
 import { AddBtn, RemoveBtn } from "../Buttons/Buttons"
 
 const WorkExpUnit = ({
@@ -11,6 +11,7 @@ const WorkExpUnit = ({
                 <TextInput placeholder="Place of organization" id={id} name="orgName" onChange={onChangeWorkExp}/>
                 <TextInput placeholder="From" id={id} name="workFrom" onChange={onChangeWorkExp}/>
                 <TextInput placeholder="To" id={id} name="workTo" onChange={onChangeWorkExp}/>
+                <TextArea placeholder="Achievements" id={id} name="achievements" onChange={onChangeWorkExp}/>
                 {isDefaultUnit ? <AddBtn addHandler={onAddWorkExp}/> :  <RemoveBtn removeHandler={() => onDeleteWorkExp(id)}/> }
         </div>
     )

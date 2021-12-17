@@ -1,4 +1,4 @@
-import { TextInput } from "../Inputs/Inputs"
+import { TextInput, TextArea } from "../Inputs/Inputs"
 import { AddBtn, RemoveBtn } from "../Buttons/Buttons"
 
 const EducationUnit = ({
@@ -14,7 +14,8 @@ const EducationUnit = ({
             <TextInput placeholder="Name of educational institute" id={id} name="eduName" onChange={onChangeEducation}/>
             <TextInput placeholder="Place of educational institute" id={id} name="eduPlace" onChange={onChangeEducation}/>
             <TextInput placeholder="From" id={id} name="eduFrom" onChange={onChangeEducation}/>
-            <TextInput placeholder="To" id={id} name="eduTo" onChange={onChangeEducation}/>      
+            <TextInput placeholder="To" id={id} name="eduTo" onChange={onChangeEducation}/>  
+            <TextArea placeholder="Courses taken" id={id} name="description" onChange={onChangeEducation} />    
             {isDefaultUnit ? <AddBtn addHandler={onAddEducation}/> :  <RemoveBtn removeHandler={() => onDeleteEducation(id)}/> }
 
         </div>

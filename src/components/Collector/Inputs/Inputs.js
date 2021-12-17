@@ -22,4 +22,10 @@ const EmailInput = ({ placeholder, id, name, onChange }) => {
     )
 }
 
-export {TextInput, TelInput, EmailInput};
+const TextArea = ({ placeholder, id, name, onChange}) => {
+    return (
+        <textarea rows="2" placeholder={placeholder} id={id} name={name} onChange={(e) => onChange(e, id)}/>
+    )
+}
+
+export {TextInput, TelInput, EmailInput, TextArea};
