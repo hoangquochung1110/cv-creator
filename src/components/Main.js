@@ -3,7 +3,7 @@ import { useState } from "react";
 import uniqid from 'uniqid';
 import Resume from "./Resume/Resume";
 
-const Main = () => {
+const Main = ({previewMode}) => {
     const [collection, setCollection] = useState(emptyCollection);
 
     const changePersonalHandler = (e, id) => {
@@ -127,26 +127,29 @@ const Main = () => {
         
     }
 
+
+
     return (
         <div className="app-container">
-                <CollectorContainer 
-                    collection={collection} 
-                    onChangePersonal={changePersonalHandler}
+            { previewMode ? <Resume collection={collection}/>
+                        :
+                            <CollectorContainer 
+                                collection={collection} 
+                                onChangePersonal={changePersonalHandler}
+                                onAddEducation={addEducationHandler}
+                                onDeleteEducation={deleteEducationHandler}
+                                onChangeEducation={changeEducationHandler}
+                                onAddWorkExp={addWorkExpHandler}
+                                onDeleteWorkExp={deleteWorkExpHandler}
+                                onChangeWorkExp={changeWorkExpHandler}
+                                onAddSkills={addSkillsHandler}
+                                onDeleteSkills={deleteSkillsHandler}
+                                onChangeSkills={changeSkillsHandler}
+                            />
+            }              
 
-                    onAddEducation={addEducationHandler}
-                    onDeleteEducation={deleteEducationHandler}
-                    onChangeEducation={changeEducationHandler}
+                {/* <div className="line-breaker"></div> */}
 
-                    onAddWorkExp={addWorkExpHandler}
-                    onDeleteWorkExp={deleteWorkExpHandler}
-                    onChangeWorkExp={changeWorkExpHandler}
-
-                    onAddSkills={addSkillsHandler}
-                    onDeleteSkills={deleteSkillsHandler}
-                    onChangeSkills={changeSkillsHandler}
-                />
-                <div className="line-breaker"></div>
-                <Resume collection={collection} />
         </div>
     );
 };
@@ -182,17 +185,31 @@ const emptyCollection = {
             workFrom: '01/2020',
             workTo: 'Present',
         },
-        // {
-        //     id: uniqid(),
-        //     isDefaultUnit: false,
-        //     jobTitle: 'Jr Backend Developer',
-        //     orgName: 'Odin Tech',
-        //     orgPlace: 'San Jose, CA',
-        //     workFrom: '01/2019',
-        //     workTo: '01/2020',
-        // }
+        {
+            id: uniqid(),
+            isDefaultUnit: false,
+            jobTitle: 'Jr Backend Developer',
+            orgName: 'Odin Tech',
+            orgPlace: 'San Jose, CA',
+            workFrom: '01/2019',
+            workTo: '01/2020',
+        }
     ],
-    'skills': [{key: uniqid(), isDefaultUnit: true, id: uniqid(), name: 'Sample'}]
+    'skills': [
+        {
+            key: uniqid(), 
+            isDefaultUnit: true, 
+            id: uniqid(), 
+            name: 'Python'
+        },
+        {
+            key: uniqid(),
+            isDefaultUnit: false,
+            id: uniqid(),
+            name: 'JavaScript'
+        }
+    
+    ]
 }
 
 export default Main;

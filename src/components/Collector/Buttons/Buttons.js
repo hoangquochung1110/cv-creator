@@ -27,4 +27,16 @@ class RemoveBtn extends Component{
     }
 }
 
-export { AddBtn, RemoveBtn }
+const EditBtn = ({editHandler}) => {
+    return (
+        <button className="edit-btn" onClick={editHandler}>Edit</button>
+    )
+}
+
+const PreviewBtn = ({previewHandler}) => {
+    return (
+        <button className="preview-btn" onClick={previewHandler}>Preview</button>
+    )
+}
+
+export { AddBtn, RemoveBtn, EditBtn, PreviewBtn }
