@@ -1,3 +1,5 @@
+import uniqid from 'uniqid';
+
 const WorkExpUnit = ({workExpUnit}) => {
     return (
         <div className="resume-work-exp-unit">
@@ -12,7 +14,7 @@ const WorkExpUnit = ({workExpUnit}) => {
             <div className="work-exp-unit-desc">
                 <div>
                     {workExpUnit.achievements.split('. ').map((sentence) => {
-                        return <div className="f-size-80">{sentence}</div>
+                        return <div key={uniqid()} className="f-size-80">{sentence}</div>
                     })}
                 </div>
             </div>
