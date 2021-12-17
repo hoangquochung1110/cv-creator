@@ -1,11 +1,12 @@
 import EducationUnit from './EducationUnit';
 import WorkExpUnit from './WorkExpUnit';
+import Section from '../Section/Section';
 
 const Qualification = ({education, workExp}) => {
     return (
         <div className="qualification">
+            <Section name="Education"/>
             <div className='resume-education'>
-                <h3>Education</h3>
                 { education.map((educationUnit) => {
                         console.log(educationUnit);
                         return (
@@ -14,14 +15,15 @@ const Qualification = ({education, workExp}) => {
                 })}
             </div>
 
-            <div className='resume-workexp'>
-                <h3>Work Experience</h3>
+            <Section name="Work Experience" />
+
+            { <div className='resume-workexp'>
                 { workExp.map((workExpUnit) => {
                     return (
                         <WorkExpUnit key={workExpUnit.id} workExpUnit={workExpUnit} />
                     )
                 })}
-            </div>
+            </div> }
 
         </div>
     )
