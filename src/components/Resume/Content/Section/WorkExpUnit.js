@@ -9,6 +9,13 @@ const WorkExpUnit = ({workExpUnit}) => {
                 <div className="text-align-left">{workExpUnit.orgName}</div>
                 <div className="text-align-right">{workExpUnit.orgPlace}</div>
             </div>
+            <div className="work-exp-unit-desc">
+                <div>
+                    {workExpUnit.achievements.split('. ').map((sentence) => {
+                        return <div className="f-size-80">{sentence}</div>
+                    })}
+                </div>
+            </div>
 
         </div>
     )

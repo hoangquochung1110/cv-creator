@@ -10,7 +10,7 @@ const EducationUnit = ({educationUnit}) => {
                 <div className="text-align-right">{educationUnit.eduPlace}</div>
             </div>
             <div className="education-unit-desc">
-                <div>Taken: Algebra, Statistics, Matrix Delta, Marketing, Algorithms and Hacking</div>
+                <div className="f-size-80">{educationUnit.description}</div>
             </div>
 
             

@@ -16,7 +16,7 @@ body {
 }
 .app-container .collector-container, .resume-container{
   background-color: var(--baby-blue);
-  padding: 2% 5% 5%;
+  padding: 5%;
 }
 
 .collector, 
@@ -32,11 +32,6 @@ body {
 
 .education-wrapper, .workexp-wrapper{
   row-gap: 1rem;
-}
-
-.line-breaker{
-  height: 4rem;
-  background-color: var(--blue-grotto);
 }
 
 .qualification{
@@ -70,9 +65,10 @@ h2, h3, h4, h5, h6 {
   margin-bottom: .5rem;
 }
 
-.resume-education-unit, .resume-work-exp-unit{
+.resume-education-unit{
   display: grid;
   grid-template-rows: 2rem 1rem 1rem;
+  row-gap: .3rem;
 }
 
 .education-unit-header, .education-unit-sub, .work-exp-unit-header, .work-exp-unit-sub{
@@ -103,12 +99,14 @@ h2, h3, h4, h5, h6 {
   position: fixed;
   right: 1%;
   top: 20%;
-
 }
 
 .preview-btn{
   position: fixed;
   right: 1%;
   top: 25%;
+}
 
+.f-size-80{
+  font-size: .8rem;
 }
