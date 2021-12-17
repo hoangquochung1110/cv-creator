@@ -2,6 +2,7 @@
 A side project to reinforce my understandings of React fundamentals (Components & Managing Props & States). Lessons learn:
   * Resuable components
   * Managing props and states (passing props & states between different domain components)
+  * Conditional rendering
 
 ## Built with
 * React
