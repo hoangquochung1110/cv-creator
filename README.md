@@ -6,3 +6,6 @@ A side project to reinforce my understandings of React fundamentals (Components 
 
 ## Built with
 * React
+
+## Notes
+Consider using Redux for larger applications to prevent from passing props through multiple levels of the component trees.
