@@ -12,8 +12,35 @@ body {
 }
 
 #root {
-  padding: 10%;
+  padding-left: 10%;
+  padding-right: 10%;
 }
+
+header {
+  text-align: center;
+}
+
+.app-brand{
+  color: white;
+  min-height: 5rem;
+  font-size: 3rem;
+  font-weight: 900;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+footer{
+  padding-top: 2%;
+  text-align: center;
+}
+
+.copyright{
+  color: white;
+  min-height: 3rem;
+  font-weight: 200;
+
+}
+
 .app-container .collector-container, .resume-container{
   padding: 5%;
 }
@@ -113,6 +140,7 @@ h2, h3, h4, h5, h6 {
   background-color: var(--baby-blue);
   outline: none;
   border: none;
+  min-width: 100px;
 }
 
 .preview-btn{
@@ -122,6 +150,7 @@ h2, h3, h4, h5, h6 {
   background-color: var(--baby-blue);
   outline: none;
   border: none;
+  min-width: 100px;
 
 }
 
