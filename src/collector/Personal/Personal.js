@@ -1,6 +1,5 @@
 import { TextInput, TelInput, EmailInput } from '../../components/Inputs';
-import {PersonalInfoStyle, PersonalContactStyle} from "../../style/PersonalStyle";
-import PersonalWrapper from './styles';
+import { PersonalInfoStyle, PersonalContactStyle, PersonalWrapper } from "./styles";
 
 
 const Personal = ({

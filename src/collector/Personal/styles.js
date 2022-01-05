@@ -5,4 +5,11 @@ const PersonalWrapper = styled.div`
     flex-direction: column;
 `;
 
-export default PersonalWrapper;
+const PersonalInfoStyle = styled.div`
+    text-align: center;
+`
+const PersonalContactStyle = styled.div`
+    text-align: center;
+`
+
+export { PersonalWrapper, PersonalInfoStyle, PersonalContactStyle };
