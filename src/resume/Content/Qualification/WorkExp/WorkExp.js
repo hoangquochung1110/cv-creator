@@ -18,7 +18,7 @@ const WorkExpUnit = ({workExpUnit}) => {
     return (
         <WorkExpUnitWrapper>
             <WorkExpUnitHeaderWrapper>
-                <TextAligned>{workExpUnit.jobTitle}</TextAligned>
+                <TextAligned weight="700">{workExpUnit.jobTitle}</TextAligned>
                 {workExpUnit.workFrom && workExpUnit.workTo ? <TextAligned aligned="right">{workExpUnit.workFrom} - {workExpUnit.workTo}</TextAligned> : <></>}
             </WorkExpUnitHeaderWrapper>
             <WorkExpUnitSubWrapper>

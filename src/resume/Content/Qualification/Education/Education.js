@@ -23,7 +23,7 @@ const EducationUnit = ({educationUnit}) => {
     return (
         <EducationUnitWrapper>
             <EducationUnitHeaderWrapper>
-                <TextAligned aligned="left">{educationUnit.studyProgram}</TextAligned>
+                <TextAligned aligned="left" weight="700">{educationUnit.studyProgram}</TextAligned>
                 {educationUnit.eduFrom && educationUnit.eduTo ? <TextAligned aligned="right">{educationUnit.eduFrom} - {educationUnit.eduTo}</TextAligned> : <></>}
             </EducationUnitHeaderWrapper>
             <EducationUnitSubWrapper>

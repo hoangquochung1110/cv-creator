@@ -7,6 +7,7 @@ const EducationUnitWrapper = styled.div`
     display: grid;
     grid-template-rows: 1.5rem 1.5rem 1.5rem;
     row-gap: .3rem;
+    padding-bottom: .5rem;
 `
 
 const EducationUnitHeaderWrapper = styled.div`
