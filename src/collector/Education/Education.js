@@ -1,5 +1,5 @@
 import EducationUnit from "./EducationUnit";
-import EducationWrapper from "./style";
+import { EducationWrapper } from "./style";
 
 const Education = ({ 
     education, 

@@ -2,6 +2,7 @@ import {TextInput, DescriptionInput} from '../../components/Inputs';
 import { AddBtn, RemoveBtn } from '../../components/Buttons';
 import { GridColOneOne, GridRowTwoOneOne } from '../../style/Grid';
 import DurationWrapper from '../../style/DurationWrapper';
+import { EducationUnitWrapper } from './style';
 
 const EducationUnit = ({
     id,
@@ -12,7 +13,7 @@ const EducationUnit = ({
     onChangeEducation
 }) => {
     return (
-        <div className="education-unit-wrapper">
+        <EducationUnitWrapper>
                 <GridColOneOne>
                     <TextInput placeholder={educationUnit.studyProgram} id={id} name="studyProgram" onChange={onChangeEducation} />
                     <DurationWrapper>
@@ -28,7 +29,7 @@ const EducationUnit = ({
 
             {isDefaultUnit ? <AddBtn addHandler={onAddEducation}/> :  <RemoveBtn removeHandler={() => onDeleteEducation(id)}/> }
 
-        </div>
+        </EducationUnitWrapper>
     )
 }
 
