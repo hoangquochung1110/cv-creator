@@ -1,8 +1,8 @@
-import CollectorContainer from "./collector/CollectorContainer";
+import Collector from "./collector/Collector";
 import { useState } from "react";
 import uniqid from 'uniqid';
 import Resume from "./resume/Resume";
-import { EditBtn, PreviewBtn } from "./components/Buttons";
+import { EditBtn } from "./components/Buttons";
 import sampleCV from "./utils";
 
 const Main = () => {
@@ -140,7 +140,7 @@ const Main = () => {
         <div className="app-container">
             { !editMode ? <Resume collection={collection}/>
                         :
-                            <CollectorContainer 
+                            <Collector
                                 collection={collection} 
                                 onChangePersonal={changePersonalHandler}
                                 onAddEducation={addEducationHandler}
@@ -155,7 +155,6 @@ const Main = () => {
                             />
             }              
             <EditBtn editHandler={editModeToggler}/>
-            <PreviewBtn previewHandler={editModeToggler}/>
 
         </div>
     );
