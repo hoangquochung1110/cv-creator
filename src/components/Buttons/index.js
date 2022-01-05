@@ -1,3 +1,3 @@
-import { AddBtn, RemoveBtn, EditBtn, PreviewBtn } from './Buttons';
+import { AddBtn, RemoveBtn, EditBtn } from './Buttons';
 
-export { AddBtn, RemoveBtn, EditBtn, PreviewBtn };
+export { AddBtn, RemoveBtn, EditBtn };

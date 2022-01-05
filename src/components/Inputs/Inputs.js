@@ -1,8 +1,8 @@
-import Input from "./styles";
+import {Input, TextArea} from "./styles";
 
-const TextInput = ({ placeholder, id, name, onChange }) => {
+const TextInput = ({placeholder, id, name, onChange, aligned }) => {
     return (
-        <Input type="text" placeholder={placeholder} id={id} name={name} onChange={(e) => onChange(e, id)}/>
+        <Input aligned={aligned} type="text" placeholder={placeholder} id={id} name={name} onChange={(e) => onChange(e, id)}/>
     )
 }
 
@@ -20,10 +20,10 @@ const EmailInput = ({ placeholder, id, name, onChange }) => {
     )
 }
 
-const TextArea = ({ placeholder, id, name, onChange}) => {
+const DescriptionInput = ({ placeholder, id, name, onChange}) => {
     return (
-        <textarea rows="2" placeholder={placeholder} id={id} name={name} onChange={(e) => onChange(e, id)}/>
+        <TextArea rows="3" placeholder={placeholder} id={id} name={name} onChange={(e) => onChange(e, id)}/>
     )
 }
 
-export {TextInput, TelInput, EmailInput, TextArea};
+export {TextInput, TelInput, EmailInput, DescriptionInput};
