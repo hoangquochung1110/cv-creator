@@ -1,9 +1,9 @@
-import SkillsUnit from "./Units/SkillsUnit";
+import SkillsUnit from "./SkillsUnit";
+import { SkillsWrapper } from "./style";
 
 const Skills = ({skills, onAddSkills, onDeleteSkills, onChangeSkills}) => {
-    // console.log(skills);
     return (
-        <div className="skills-wrapper">
+        <SkillsWrapper>
             { skills.map((unit) => {
                     return (
                         <SkillsUnit 
@@ -18,7 +18,7 @@ const Skills = ({skills, onAddSkills, onDeleteSkills, onChangeSkills}) => {
                         />
                     )
                 })}
-        </div>
+        </SkillsWrapper>
     )
 }
 

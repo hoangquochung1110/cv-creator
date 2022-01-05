@@ -1,5 +1,6 @@
 import {TextInput} from '../../components/Inputs';
 import { AddBtn, RemoveBtn } from '../../components/Buttons';
+import { SkillsUnitWrapper } from './style';
 
 const SkillsUnit = ({
     id,
@@ -10,10 +11,10 @@ const SkillsUnit = ({
     changeUnit
 }) => {
     return (
-        <div>
+        <SkillsUnitWrapper>
             <TextInput placeholder="Skills"  id={id} value={name} onChange={changeUnit}/>
             {isDefaultUnit ? <AddBtn addHandler={addUnit}/> :  <RemoveBtn removeHandler={() => deleteUnit(id)}/> }
-        </div>
+        </SkillsUnitWrapper>
 
     )
 }

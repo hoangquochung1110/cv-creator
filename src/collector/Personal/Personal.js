@@ -1,5 +1,6 @@
-import { TextInput, TelInput, EmailInput } from '../components/Inputs';
-import {PersonalInfoStyle, PersonalContactStyle} from "../style/PersonalStyle";
+import { TextInput, TelInput, EmailInput } from '../../components/Inputs';
+import {PersonalInfoStyle, PersonalContactStyle} from "../../style/PersonalStyle";
+import PersonalWrapper from './style';
 
 
 const Personal = ({
@@ -7,7 +8,7 @@ const Personal = ({
     onChangePersonal
 }) => {
     return(
-        <div className="personal-wrapper">
+        <PersonalWrapper>
             <PersonalInfoStyle>
                 <TextInput placeholder={personal.fname} id="fname" name="fname" onChange={onChangePersonal}/>
             </PersonalInfoStyle>
@@ -18,7 +19,7 @@ const Personal = ({
                 <TelInput placeholder="84-912-345-678" pattern="[0-9]{2}-[0-9]{3}-[0-9]{3}-[0-9]{3}" id="telephone" name="telephone" onChange={onChangePersonal}/>
             </PersonalContactStyle>
 
-        </div>
+        </PersonalWrapper>
     )
 }
 

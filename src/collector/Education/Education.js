@@ -1,4 +1,5 @@
-import EducationUnit from "./Units/EducationUnit";
+import EducationUnit from "./EducationUnit";
+import EducationWrapper from "./style";
 
 const Education = ({ 
     education, 
@@ -7,12 +8,13 @@ const Education = ({
     onChangeEducation
 }) => {
     return (
-        <div className="education-wrapper"> 
+        <EducationWrapper>
             { education.map((educationUnit) => {
                 return(
                     <EducationUnit 
                         key={educationUnit.id}
                         id={educationUnit.id}
+                        educationUnit={educationUnit}
                         isDefaultUnit={educationUnit.isDefaultUnit}
                         onAddEducation={onAddEducation}
                         onDeleteEducation={onDeleteEducation}
@@ -20,7 +22,7 @@ const Education = ({
                     />
                 )
             })}
-        </div>
+        </EducationWrapper>
         
     )
 }

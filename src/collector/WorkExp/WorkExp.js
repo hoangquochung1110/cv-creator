@@ -1,4 +1,5 @@
-import WorkExpUnit from './Units/WorkExpUnit';
+import { WorkExpWrapper } from './style';
+import WorkExpUnit from './WorkExpUnit';
 
 const WorkExp = ({
     workExp,
@@ -7,12 +8,13 @@ const WorkExp = ({
     onChangeWorkExp
 }) => {
     return (
-        <div className="workexp-wrapper">
+        <WorkExpWrapper>
             { workExp.map((workExpUnit) => {
                 return (
                     <WorkExpUnit
                         key={workExpUnit.id}
                         id={workExpUnit.id}
+                        workExpUnit={workExpUnit}
                         isDefaultUnit={workExpUnit.isDefaultUnit}
                         onAddWorkExp={onAddWorkExp}
                         onDeleteWorkExp={onDeleteWorkExp}
@@ -21,7 +23,7 @@ const WorkExp = ({
                 )
 
             })}
-        </div>
+        </WorkExpWrapper>
     )
 }
 

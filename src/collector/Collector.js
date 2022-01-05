@@ -1,9 +1,10 @@
-import Education from "./Education";
-import Personal from "./Personal";
-import WorkExp from "./WorkExp";
-import Skills from "./Skills";
+import Education from "./Education/Education";
+import Personal from "./Personal/Personal";
+import WorkExp from "./WorkExp/WorkExp";
+import Skills from "./Skills/Skills";
+import CollectorWrapper from "./style";
 
-const CollectorContainer = ({
+const Collector = ({
     collection, 
 
     onChangePersonal,
@@ -21,8 +22,7 @@ const CollectorContainer = ({
     onChangeSkills
 }) => {
     return (
-        <div className="collector-container">
-            <div className="collector">
+        <CollectorWrapper>
                 <h3>Personal Information</h3>
                 <Personal
                     personal={collection.personal}
@@ -49,9 +49,8 @@ const CollectorContainer = ({
                     onDeleteSkills={onDeleteSkills}
                     onChangeSkills={onChangeSkills}
                 />
-            </div>
-        </div>
+        </CollectorWrapper>
     )
 }
 
-export default CollectorContainer;
+export default Collector;
