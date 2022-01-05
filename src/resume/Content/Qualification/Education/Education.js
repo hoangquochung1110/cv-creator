@@ -5,7 +5,7 @@ import {
     EducationUnitWrapper, 
     EducationWrapper, 
 } from "./styles"
-import TextAligned from "../../../../style/TextAligned";
+import TextAligned from "../../../../styles/TextAligned";
 
 const Education  = ({education}) => {
     return (

@@ -1,7 +1,7 @@
 import {TextInput, DescriptionInput} from '../../components/Inputs';
 import { AddBtn, RemoveBtn } from '../../components/Buttons';
-import { GridColOneOne, GridRowTwoOneOne } from '../../style/Grid';
-import DurationWrapper from '../../style/DurationWrapper';
+import { GridColOneOne, GridRowTwoOneOne } from '../../styles/Grid';
+import DurationWrapper from '../../styles/DurationWrapper';
 import { EducationUnitWrapper } from './styles';
 
 const EducationUnit = ({
