@@ -1,5 +1,6 @@
 import uniqid from 'uniqid';
 import { WorkExpUnitWrapper } from '../../../../collector/WorkExp/styles';
+import TextAligned from '../../../../style/TextAligned';
 import { WorkExpUnitDescWrapper, WorkExpUnitHeaderWrapper, WorkExpUnitSubWrapper, WorkExpWrapper } from './styles';
 
 const WorkExp = ({workExp}) => {
@@ -18,12 +19,12 @@ const WorkExpUnit = ({workExpUnit}) => {
     return (
         <WorkExpUnitWrapper>
             <WorkExpUnitHeaderWrapper>
-                <h4 className="text-align-left">{workExpUnit.jobTitle}</h4>
-                {workExpUnit.workFrom && workExpUnit.workTo ? <h6 className="text-align-right">{workExpUnit.workFrom} - {workExpUnit.workTo}</h6> : <></>}
+                <TextAligned>{workExpUnit.jobTitle}</TextAligned>
+                {workExpUnit.workFrom && workExpUnit.workTo ? <TextAligned aligned="right">{workExpUnit.workFrom} - {workExpUnit.workTo}</TextAligned> : <></>}
             </WorkExpUnitHeaderWrapper>
             <WorkExpUnitSubWrapper>
-                <div className="text-align-left">{workExpUnit.orgName}</div>
-                <div className="text-align-right">{workExpUnit.orgPlace}</div>
+                <TextAligned>{workExpUnit.orgName}</TextAligned>
+                <TextAligned aligned="right">{workExpUnit.orgPlace}</TextAligned>
             </WorkExpUnitSubWrapper>
             <WorkExpUnitDescWrapper>
                     {workExpUnit.achievements.split('. ').map((sentence) => {

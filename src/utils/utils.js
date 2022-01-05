@@ -29,7 +29,7 @@ const sampleCV = {
             eduPlace: 'Place of Education',
             eduFrom: 'mm/yyyy',
             eduTo: 'mm/yyyy',
-            description: 'Courses taken/ Graduate thesis'
+            description: 'Courses taken/ Graduate thesis.'
         },
         {   
             id: uniqid(),
@@ -39,7 +39,7 @@ const sampleCV = {
             eduPlace: 'Place of Education',
             eduFrom: 'mm/yyyy',
             eduTo: 'mm/yyyy',
-            description: 'Courses taken/ Graduate thesis'
+            description: 'Courses taken/ Graduate thesis.'
         },
     ],
     'workExp': [
@@ -72,7 +72,7 @@ const sampleCV = {
             orgPlace: 'Place of organization',
             workFrom: 'mm/yyyy',
             workTo: 'mm/yyyy',
-            achievements: 'Achievements'
+            achievements: 'Achievements.'
 
         }
     ],

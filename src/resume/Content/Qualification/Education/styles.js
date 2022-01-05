@@ -1,12 +1,11 @@
 import styled from "styled-components";
 
 const EducationWrapper = styled.div`
-    padding-bottom: 2%;
 `
 
 const EducationUnitWrapper = styled.div`
     display: grid;
-    grid-template-rows: 2rem 1rem 1rem;
+    grid-template-rows: 1.5rem 1.5rem 1.5rem;
     row-gap: .3rem;
 `
 
@@ -24,10 +23,11 @@ const EducationUnitDescWrapper = styled.div`
     display: block;
 `;
 
+
 export { 
     EducationWrapper, 
     EducationUnitWrapper, 
     EducationUnitHeaderWrapper, 
     EducationUnitSubWrapper, 
-    EducationUnitDescWrapper 
+    EducationUnitDescWrapper,
 }

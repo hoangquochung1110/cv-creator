@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const WorkExpWrapper = styled.div`
-    padding-bottom: 2%;
 `
 
 const WorkExpUnitWrapper = styled.div`

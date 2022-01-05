@@ -20,23 +20,6 @@ body {
   padding: 5%;
 }
 
-.text-align-left{
-  text-align: left;
-}
-
-.text-align-right{
-  text-align: right;
-}
-
-.text-align-center{
-  text-align: center;
-}
-
-h2, h3, h4, h5, h6 {
-  margin-top: .5rem;
-  margin-bottom: .5rem;
-}
-
 .f-size-80{
   font-size: .8rem;
 }
