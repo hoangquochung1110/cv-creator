@@ -1,4 +1,4 @@
-import LineBreakWrapper from "./style"
+import LineBreakWrapper from "./styles"
 
 const LineBreak = ({name}) => {
     return (

@@ -1,13 +1,5 @@
 import { Component } from "react";
-
-// class SkillButton extends Component{
-//     render(){
-//         const { text } = this.props;
-//         return (
-//             <button className="skill-btn">{text}</button>
-//         )
-//     }
-// }
+import { FixedButton } from "./styles";
 
 class AddBtn extends Component{
     render(){
@@ -29,7 +21,7 @@ class RemoveBtn extends Component{
 
 const EditBtn = ({editHandler}) => {
     return (
-        <button className="edit-btn" onClick={editHandler}>Mode</button>
+        <FixedButton className="edit-btn" onClick={editHandler}>Mode</FixedButton>
     )
 }
 

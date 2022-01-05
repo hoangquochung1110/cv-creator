@@ -1,13 +1,11 @@
 import React from 'react';
 import Main from './Main';
-import Header from './layout/Header';
-import Footer from './layout/Footer';
-
-
+import Header from './layout/Header/Header';
+import Footer from './layout/Footer/Footer';
 const App = () => {
     return (
         <>  
-            <Header />
+            <Header/>
             <Main/>
             <Footer />
         </>

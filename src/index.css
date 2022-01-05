@@ -16,73 +16,9 @@ body {
   padding-right: 10%;
 }
 
-header {
-  text-align: center;
-}
-
-.app-brand{
-  color: white;
-  min-height: 5rem;
-  font-size: 3rem;
-  font-weight: 900;
-  padding-top: 2%;
-  padding-bottom: 2%;
-}
-
-footer{
-  padding-top: 2%;
-  text-align: center;
-}
-
-.copyright{
-  color: white;
-  min-height: 3rem;
-  font-weight: 200;
-
-}
-
-.app-container .collector-container, .resume-container{
+.app-container-container{
   padding: 5%;
 }
-
-.collector-container{
-  /* background-color: var(--baby-blue); */
-  background-color: white;
-
-}
-
-.resume-container{
-  background-color: white;
-}
-
-.collector, 
-.personal-wrapper, 
-.education-wrapper,
-.education-unit-wrapper, 
-.workexp-wrapper
-.workexp-unit-wrapper
-{
-  display: flex;
-  flex-direction: column;
-}
-
-.education-wrapper, .workexp-wrapper{
-  row-gap: 1rem;
-}
-
-/* .qualification{
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  padding-bottom: 1rem;
-} */
-
-/* .resume-personal-base{
-  text-align: center;
-} */
-
-/* .resume-personal-contact > * {
-  text-align: center;
-} */
 
 .text-align-left{
   text-align: left;
@@ -101,67 +37,6 @@ h2, h3, h4, h5, h6 {
   margin-bottom: .5rem;
 }
 
-.resume-personal, .resume-education, .resume-workexp, .resume-skills{
-  padding-bottom: 2%;
-}
-
-.resume-education-unit{
-  display: grid;
-  grid-template-rows: 2rem 1rem 1rem;
-  row-gap: .3rem;
-}
-
-.education-unit-header, .education-unit-sub, .work-exp-unit-header, .work-exp-unit-sub{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.section {
-  border-bottom: 2px solid black;
-}
-
-.resume-skills{
-  display: flex;
-  flex-direction: row;
-  justify-content: left;
-  column-gap: 1rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-
-.resume-skills-unit {
-  border: 1px solid;
-  border-radius: 10px;
-  padding: 2px;
-}
-
-.edit-btn{
-  position: fixed;
-  right: 1%;
-  top: 20%;
-  background-color: var(--baby-blue);
-  outline: none;
-  border: none;
-  min-width: 100px;
-}
-
-.preview-btn{
-  position: fixed;
-  right: 1%;
-  top: 25%;
-  background-color: var(--baby-blue);
-  outline: none;
-  border: none;
-  min-width: 100px;
-
-}
-
 .f-size-80{
   font-size: .8rem;
-}
-
-/* Remove input border */
-.personal-wrapper > input {
-  border: none;
-  background-color: inherit;
 }
