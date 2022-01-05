@@ -1,14 +1,22 @@
-import SkillsUnit from "./SkillsUnit";
+import { SkillsUnitWrapper, SkillsWrapper } from "./styles"
 
 const Skills = ({skills}) => {
     return (
-        <div className='resume-skills'>
+        <SkillsWrapper>
                 { skills.map((skillsUnit) => {
                         return (
                             <SkillsUnit key={skillsUnit.id} skillsUnit={skillsUnit}/>
                         )
                 })}
-        </div>
+        </SkillsWrapper>
+    )
+}
+
+const SkillsUnit = ({skillsUnit}) => {
+    return (
+        <SkillsUnitWrapper>
+            <div>{skillsUnit.name}</div>
+            </SkillsUnitWrapper>
     )
 }
 

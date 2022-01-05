@@ -1,16 +1,17 @@
-import Personal from "./Section/Personal";
-import Qualification from "./Qualification/Qualification";
+import Personal from "./Qualification/Personal";
+import Qualification from "./Qualification";
+import ContentWrapper from "./styles";
 
 const Content = ({collection}) => {
     return (
-        <div className="resume-content">
+        <ContentWrapper>
             <Personal personal={collection.personal} />
             <Qualification 
                 education={collection.education} 
                 workExp={collection.workExp} 
                 skills={collection.skills}
             />
-        </div>
+        </ContentWrapper>
     )
 }
 

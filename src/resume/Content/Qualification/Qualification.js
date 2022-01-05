@@ -1,22 +1,23 @@
-import SectionBreaker from '../Section/SectionBreaker';
-import Education from '../Section/Education';
-import WorkExp from '../Section/WorkExp';
-import Skills from '../Section/Skills';
+import Education from './Education';
+import WorkExp from './WorkExp';
+import Skills from './Skills';
+import LineBreak from '../../../components/LineBreak';
+import QualificationWrapper from './styles';
 
 const Qualification = ({education, workExp, skills}) => {
     console.log(skills);
     return (
-        <div className="qualification">
-            <SectionBreaker name="Education"/>
+        <QualificationWrapper>
+            <LineBreak name="Education"/>
             <Education education={education} />
 
-            <SectionBreaker name="Work Experience" />
+            <LineBreak name="Work Experience" />
             <WorkExp workExp={workExp} />
 
-            <SectionBreaker name="Skills" />
+            <LineBreak name="Skills" />
             <Skills skills={skills} />
 
-        </div>
+        </QualificationWrapper>
     )
 }
 
