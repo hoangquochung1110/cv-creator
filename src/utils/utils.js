@@ -21,6 +21,26 @@ const sampleCV = {
             eduTo: '01/2020',
             description: 'Courses: Algebra, Statistics, Matrix Delta, Marketing, Algorithms and Hacking'
         },
+        {   
+            id: uniqid(),
+            isDefaultUnit: false,
+            studyProgram: 'Study Program',
+            eduName: 'Name of Education',
+            eduPlace: 'Place of Education',
+            eduFrom: 'mm/yyyy',
+            eduTo: 'mm/yyyy',
+            description: 'Courses taken/ Graduate thesis'
+        },
+        {   
+            id: uniqid(),
+            isDefaultUnit: false,
+            studyProgram: 'Study Program',
+            eduName: 'Name of Education',
+            eduPlace: 'Place of Education',
+            eduFrom: 'mm/yyyy',
+            eduTo: 'mm/yyyy',
+            description: 'Courses taken/ Graduate thesis'
+        },
     ],
     'workExp': [
         {
@@ -42,6 +62,17 @@ const sampleCV = {
             workFrom: '01/2019',
             workTo: '01/2020',
             achievements: 'Implement a distributed version of SON algorithm for finding frequent itemsets in PySpark. Utilize XGboost and Item-based collaborative filtering to predict the score a user would rate a business'
+
+        },
+        {
+            id: uniqid(),
+            isDefaultUnit: false,
+            jobTitle: 'Job title',
+            orgName: 'Name of organization',
+            orgPlace: 'Place of organization',
+            workFrom: 'mm/yyyy',
+            workTo: 'mm/yyyy',
+            achievements: 'Achievements'
 
         }
     ],
