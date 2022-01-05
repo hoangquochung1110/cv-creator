@@ -1,5 +1,5 @@
-import { TextInput, TextArea } from "../Inputs/Inputs"
-import { AddBtn, RemoveBtn } from "../Buttons/Buttons"
+import {TextInput, TextArea} from '../../components/Inputs';
+import { AddBtn, RemoveBtn } from '../../components/Buttons';
 
 const WorkExpUnit = ({
     id, isDefaultUnit, onAddWorkExp, onDeleteWorkExp, onChangeWorkExp
@@ -17,4 +17,4 @@ const WorkExpUnit = ({
     )
 }
 
-export default WorkExpUnit
+export default WorkExpUnit;

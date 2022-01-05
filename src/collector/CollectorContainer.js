@@ -25,6 +25,7 @@ const CollectorContainer = ({
             <div className="collector">
                 <h3>Personal Information</h3>
                 <Personal
+                    personal={collection.personal}
                     onChangePersonal={onChangePersonal}
                 />
                 <h3>Education</h3>

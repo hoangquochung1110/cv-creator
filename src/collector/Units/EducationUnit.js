@@ -1,6 +1,5 @@
-import { TextInput, TextArea } from "../Inputs/Inputs"
-import { AddBtn, RemoveBtn } from "../Buttons/Buttons"
-
+import {TextInput, TextArea} from '../../components/Inputs';
+import { AddBtn, RemoveBtn } from '../../components/Buttons';
 const EducationUnit = ({
     id, 
     isDefaultUnit, 

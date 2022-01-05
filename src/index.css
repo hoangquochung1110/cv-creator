@@ -46,7 +46,9 @@ footer{
 }
 
 .collector-container{
-  background-color: var(--baby-blue);
+  /* background-color: var(--baby-blue); */
+  background-color: white;
+
 }
 
 .resume-container{
@@ -68,19 +70,19 @@ footer{
   row-gap: 1rem;
 }
 
-.qualification{
+/* .qualification{
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   padding-bottom: 1rem;
-}
+} */
 
-.resume-personal-base{
+/* .resume-personal-base{
   text-align: center;
-}
+} */
 
-.resume-personal-contact > * {
+/* .resume-personal-contact > * {
   text-align: center;
-}
+} */
 
 .text-align-left{
   text-align: left;
@@ -156,4 +158,10 @@ h2, h3, h4, h5, h6 {
 
 .f-size-80{
   font-size: .8rem;
+}
+
+/* Remove input border */
+.personal-wrapper > input {
+  border: none;
+  background-color: inherit;
 }

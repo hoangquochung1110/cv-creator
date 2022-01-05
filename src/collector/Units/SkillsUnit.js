@@ -1,5 +1,5 @@
-import { TextInput } from "../Inputs/Inputs";
-import { AddBtn, RemoveBtn } from "../Buttons/Buttons";
+import {TextInput} from '../../components/Inputs';
+import { AddBtn, RemoveBtn } from '../../components/Buttons';
 
 const SkillsUnit = ({
     id,

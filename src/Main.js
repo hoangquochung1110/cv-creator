@@ -1,10 +1,13 @@
-import CollectorContainer from "./Collector/CollectorContainer";
+import CollectorContainer from "./collector/CollectorContainer";
 import { useState } from "react";
 import uniqid from 'uniqid';
-import Resume from "./Resume/Resume";
+import Resume from "./resume/Resume";
+import { EditBtn, PreviewBtn } from "./components/Buttons";
+import sampleCV from "./utils";
 
-const Main = ({previewMode}) => {
-    const [collection, setCollection] = useState(emptyCollection);
+const Main = () => {
+    const [collection, setCollection] = useState(sampleCV); // data collection
+    const [editMode, setEditMode] = useState(true);
 
     const changePersonalHandler = (e, id) => {
         console.log(id);
@@ -127,11 +130,15 @@ const Main = ({previewMode}) => {
         
     }
 
+    const editModeToggler = () => {
+        setEditMode((prevMode) => !prevMode)
+    }
+
 
 
     return (
         <div className="app-container">
-            { previewMode ? <Resume collection={collection}/>
+            { !editMode ? <Resume collection={collection}/>
                         :
                             <CollectorContainer 
                                 collection={collection} 
@@ -147,73 +154,12 @@ const Main = ({previewMode}) => {
                                 onChangeSkills={changeSkillsHandler}
                             />
             }              
-
-                {/* <div className="line-breaker"></div> */}
+            <EditBtn editHandler={editModeToggler}/>
+            <PreviewBtn previewHandler={editModeToggler}/>
 
         </div>
     );
 };
 
-const emptyCollection = {
-    'personal': {
-        id: uniqid(),
-        lname: 'Adams',
-        fname: 'John',
-        address: 'Orange County, CA',
-        email: 'ajohn@example.com',
-        telephone: '84 934099412',
-        github: 'example@github'
-    },
-    'education': [ 
-        {   
-            id: uniqid(),
-            isDefaultUnit: true,
-            studyProgram: 'Bachelor of Computer Science',
-            eduName: 'University of North Carolina',
-            eduPlace: 'San Jose, CA',
-            eduFrom: '08/2014',
-            eduTo: '01/2020',
-            description: 'Courses: Algebra, Statistics, Matrix Delta, Marketing, Algorithms and Hacking'
-        },
-    ],
-    'workExp': [
-        {
-            id: uniqid(),
-            isDefaultUnit: true,
-            jobTitle: 'Project Manager',
-            orgName: 'Odin Tech',
-            orgPlace: 'Los Angeles, CA',
-            workFrom: '01/2020',
-            workTo: 'Present',
-            achievements: 'Kaggle Big Data: a Chinese grocery store had more than 800K transactions from November 2000 to February 2001. Write PySpark code to process and clean files of more than 1.5 million rows and to do feature selections.'
-        },
-        {
-            id: uniqid(),
-            isDefaultUnit: false,
-            jobTitle: 'Jr Backend Developer',
-            orgName: 'Odin Tech',
-            orgPlace: 'San Jose, CA',
-            workFrom: '01/2019',
-            workTo: '01/2020',
-            achievements: 'Implement a distributed version of SON algorithm for finding frequent itemsets in PySpark. Utilize XGboost and Item-based collaborative filtering to predict the score a user would rate a business'
-
-        }
-    ],
-    'skills': [
-        {
-            key: uniqid(), 
-            isDefaultUnit: true, 
-            id: uniqid(), 
-            name: 'Python'
-        },
-        {
-            key: uniqid(),
-            isDefaultUnit: false,
-            id: uniqid(),
-            name: 'JavaScript'
-        }
-    
-    ]
-}
 
 export default Main;
