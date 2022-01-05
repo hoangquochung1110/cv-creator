@@ -1,7 +1,6 @@
 import uniqid from 'uniqid';
-import { WorkExpUnitWrapper } from '.styles/styles';
 import TextAligned from '../../../../styles/TextAligned';
-import { WorkExpUnitDescWrapper, WorkExpUnitHeaderWrapper, WorkExpUnitSubWrapper, WorkExpWrapper } from './styles';
+import { WorkExpUnitDescWrapper, WorkExpUnitHeaderWrapper, WorkExpUnitSubWrapper, WorkExpWrapper, WorkExpUnitWrapper } from './styles';
 
 const WorkExp = ({workExp}) => {
     return (
