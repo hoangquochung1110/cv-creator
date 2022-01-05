@@ -1,6 +1,6 @@
 import {TextInput} from '../../components/Inputs';
 import { AddBtn, RemoveBtn } from '../../components/Buttons';
-import { SkillsUnitWrapper } from './style';
+import { SkillsUnitWrapper } from './styles';
 
 const SkillsUnit = ({
     id,

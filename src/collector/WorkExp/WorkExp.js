@@ -1,4 +1,4 @@
-import { WorkExpWrapper } from './style';
+import { WorkExpWrapper } from './styles';
 import WorkExpUnit from './WorkExpUnit';
 
 const WorkExp = ({

@@ -1,5 +1,5 @@
 import SkillsUnit from "./SkillsUnit";
-import { SkillsWrapper } from "./style";
+import { SkillsWrapper } from "./styles";
 
 const Skills = ({skills, onAddSkills, onDeleteSkills, onChangeSkills}) => {
     return (

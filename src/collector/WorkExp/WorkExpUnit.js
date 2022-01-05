@@ -2,7 +2,7 @@ import {TextInput, DescriptionInput} from '../../components/Inputs';
 import { AddBtn, RemoveBtn } from '../../components/Buttons';
 import { GridColOneOne } from '../../style/Grid';
 import DurationWrapper from '../../style/DurationWrapper';
-import { WorkExpUnitWrapper } from './style';
+import { WorkExpUnitWrapper } from './styles';
 
 const WorkExpUnit = ({
     id, workExpUnit, isDefaultUnit, onAddWorkExp, onDeleteWorkExp, onChangeWorkExp
