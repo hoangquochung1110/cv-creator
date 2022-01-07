@@ -8,7 +8,6 @@ import { X, Check} from './utils';
 
 const Main = () => {
     const [collection, setCollection] = useState(sampleCV); // data collection
-    const [editMode, setEditMode] = useState(true);
 
     const changePersonalHandler = (e, id) => {
         console.log(id);

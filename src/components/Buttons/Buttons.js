@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { CircleButton, FixedButton, ToggleButtonWrapper } from "./styles";
+import { ToggleButtonWrapper } from "./styles";
 import { X, Check } from '../../utils';
 import ToggleButton from 'react-toggle-button';
 
