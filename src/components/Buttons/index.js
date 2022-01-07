@@ -1,3 +1,3 @@
-import { AddBtn, RemoveBtn, EditBtn } from './Buttons';
+import { AddBtn, RemoveBtn, EditBtn, ModeSwitcher } from './Buttons';
 
-export { AddBtn, RemoveBtn, EditBtn };
+export { AddBtn, RemoveBtn, EditBtn, ModeSwitcher };

@@ -2,8 +2,9 @@ import Collector from "./collector/Collector";
 import { useState } from "react";
 import uniqid from 'uniqid';
 import Resume from "./resume/Resume";
-import { EditBtn } from "./components/Buttons";
-import sampleCV from "./utils";
+import { ModeSwitcher } from "./components/Buttons";
+import { sampleCV } from "./utils";
+import { X, Check} from './utils';
 
 const Main = () => {
     const [collection, setCollection] = useState(sampleCV); // data collection
@@ -130,15 +131,21 @@ const Main = () => {
         
     }
 
-    const editModeToggler = () => {
-        setEditMode((prevMode) => !prevMode)
-    }
+    const [mode, setMode] = useState(false);
 
 
 
     return (
         <div className="app-container">
-            { !editMode ? <Resume collection={collection}/>
+            <ModeSwitcher
+                value={mode}
+                inactiveLabel={<X/>}
+                activeLabel={<Check/>}
+                onToggle={(mode) => {
+                    setMode(!mode);
+                }}
+            />
+            { !mode ? <Resume collection={collection}/>
                         :
                             <Collector
                                 collection={collection} 
@@ -154,7 +161,6 @@ const Main = () => {
                                 onChangeSkills={changeSkillsHandler}
                             />
             }              
-            <EditBtn editHandler={editModeToggler}/>
 
         </div>
     );

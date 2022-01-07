@@ -1,5 +1,7 @@
 import { Component } from "react";
-import { FixedButton } from "./styles";
+import { CircleButton, FixedButton, ToggleButtonWrapper } from "./styles";
+import { X, Check } from '../../utils';
+import ToggleButton from 'react-toggle-button';
 
 class AddBtn extends Component{
     render(){
@@ -19,11 +21,20 @@ class RemoveBtn extends Component{
     }
 }
 
-const EditBtn = ({editHandler}) => {
+const ModeSwitcher = ({value, onToggle}) => {
     return (
-        <FixedButton className="edit-btn" onClick={editHandler}>Mode</FixedButton>
+        <ToggleButtonWrapper>
+            <ToggleButton 
+                value={value}
+                inactiveLabel={<X/>}
+                activeLabel={<Check/>}
+                onToggle={onToggle}
+            />
+        </ToggleButtonWrapper>
+
     )
+
 }
 
 
-export { AddBtn, RemoveBtn, EditBtn }
+export { AddBtn, RemoveBtn, ModeSwitcher}

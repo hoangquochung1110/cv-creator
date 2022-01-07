@@ -10,4 +10,18 @@ const FixedButton = styled.button`
     min-width: 100px;
 `
 
-export { FixedButton }
+const CircleButton = styled.div`
+    background-color: #6B5E8A;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+`
+const ToggleButtonWrapper = styled.div`
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+padding-bottom: 2%;
+
+`
+export { FixedButton, CircleButton, ToggleButtonWrapper }

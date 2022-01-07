@@ -1,3 +1,3 @@
-import sampleCV from "./utils";
+import { sampleCV, X, Check } from "./utils";
 
-export default sampleCV;
+export { sampleCV, X, Check };

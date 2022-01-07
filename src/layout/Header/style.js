@@ -10,7 +10,6 @@ const AppBrand = styled.div`
     font-size: 3rem;
     font-weight: 900;
     padding-top: 2%;
-    padding-bottom: 2%;
 `
 
 export  {HeaderWrapper, AppBrand};
