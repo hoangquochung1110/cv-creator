@@ -1,4 +1,4 @@
-import Content from "./Content/Content";
+import Content from "./Content";
 
 const Resume = ({collection}) => {
     return (
