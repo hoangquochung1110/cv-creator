@@ -1,4 +1,4 @@
-import Collector from "./collector/Collector";
+import Collector from "./collector";
 import { useState } from "react";
 import uniqid from 'uniqid';
 import Resume from "./resume/Resume";
