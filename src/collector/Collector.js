@@ -1,7 +1,7 @@
-import Education from "./Education/Education";
-import Personal from "./Personal/Personal";
-import WorkExp from "./WorkExp/WorkExp";
-import Skills from "./Skills/Skills";
+import Education from "./Education";
+import Personal from "./Personal";
+import WorkExp from "./WorkExp";
+import Skills from "./Skills";
 import CollectorWrapper from "./styles";
 
 const Collector = ({
