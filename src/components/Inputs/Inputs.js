@@ -6,13 +6,7 @@ const TextInput = ({
     name, 
     onChange, 
     aligned,
-    width
 }) => {
-
-    const widthSetter = () => {
-        // console.log(name);
-        return '200px';
-    }
 
     return (
         <Input 
@@ -22,7 +16,6 @@ const TextInput = ({
             id={id} 
             name={name} 
             onChange={(e) => onChange(e, id)}
-            width={width}
         />
     )
 }
