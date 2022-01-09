@@ -6,6 +6,8 @@ import { ModeSwitcher } from "./components/Buttons";
 import { FontSelector } from "./components/Inputs";
 import { X, Check, sampleCV} from './utils';
 import styled from "styled-components";
+import Footer from "./layout/Footer";
+import Header from "./layout/Header";
 
 const Main = () => {
     const [collection, setCollection] = useState(sampleCV); // data collection
@@ -134,50 +136,52 @@ const Main = () => {
 
 
     return (
-        
-        <AppWrapper>
-            <Customizer>
-                <FontSelector 
-                    options={[
-                        { value: 'Roboto', label: 'Roboto' },
-                        { value: 'Calibri', label: 'Calibri' },
-                        { value: 'Ubuntu', label: 'Ubuntu' },
-                        { value: 'Futara', label: 'Futara' }
-                    ]}
-                    onChange={(e) => setFont(e.value)}
-                    
-                />
-                <ModeSwitcher
-                    value={mode}
-                    inactiveLabel={<X/>}
-                    activeLabel={<Check/>}
-                    onToggle={(mode) => {
-                        setMode(!mode);
-                    }}
-                />
-            </Customizer>
+        <>
+            <Header/>
+            <AppWrapper>
+                <Customizer>
+                    <FontSelector 
+                        options={[
+                            { value: 'Roboto', label: 'Roboto' },
+                            { value: 'Calibri', label: 'Calibri' },
+                            { value: 'Ubuntu', label: 'Ubuntu' },
+                            { value: 'Futara', label: 'Futara' }
+                        ]}
+                        onChange={(e) => setFont(e.value)}
+                        
+                    />
+                    <ModeSwitcher
+                        value={mode}
+                        inactiveLabel={<X/>}
+                        activeLabel={<Check/>}
+                        onToggle={(mode) => {
+                            setMode(!mode);
+                        }}
+                    />
+                </Customizer>
 
-            { !mode ?   <Resume 
-                            collection={collection} 
-                            font={font}
-                        />
-                    :
-                        <Collector
-                            collection={collection} 
-                            onChangePersonal={changePersonalHandler}
-                            onAddEducation={addEducationHandler}
-                            onDeleteEducation={deleteEducationHandler}
-                            onChangeEducation={changeEducationHandler}
-                            onAddWorkExp={addWorkExpHandler}
-                            onDeleteWorkExp={deleteWorkExpHandler}
-                            onChangeWorkExp={changeWorkExpHandler}
-                            onAddSkills={addSkillsHandler}
-                            onDeleteSkills={deleteSkillsHandler}
-                            onChangeSkills={changeSkillsHandler}
-                        />
-            }              
-
-        </AppWrapper>
+                { !mode ?   <Resume 
+                                collection={collection} 
+                                font={font}
+                            />
+                        :
+                            <Collector
+                                collection={collection} 
+                                onChangePersonal={changePersonalHandler}
+                                onAddEducation={addEducationHandler}
+                                onDeleteEducation={deleteEducationHandler}
+                                onChangeEducation={changeEducationHandler}
+                                onAddWorkExp={addWorkExpHandler}
+                                onDeleteWorkExp={deleteWorkExpHandler}
+                                onChangeWorkExp={changeWorkExpHandler}
+                                onAddSkills={addSkillsHandler}
+                                onDeleteSkills={deleteSkillsHandler}
+                                onChangeSkills={changeSkillsHandler}
+                            />
+                }              
+            </AppWrapper>
+            <Footer/>
+        </>
     );
 };
 
