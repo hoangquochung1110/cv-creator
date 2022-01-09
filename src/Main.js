@@ -10,7 +10,6 @@ const Main = () => {
     const [collection, setCollection] = useState(sampleCV); // data collection
 
     const changePersonalHandler = (e, id) => {
-        console.log(id);
         setCollection((prevCollection) => {
             const newPersonal = prevCollection.personal;
             newPersonal[id] = e.target.value;
@@ -26,11 +25,11 @@ const Main = () => {
             ...prevCollection,
             education: [...prevCollection.education, {
                 id: uniqid(),
-                studyProgram: '',
-                eduName: '',
-                eduPlace: '',
-                eduFrom: '',
-                eduTo: '',
+                studyProgram: 'Study Program',
+                eduName: 'Name of Educational Institute',
+                eduPlace: 'Place of Educational Institute',
+                eduFrom: 'mm/yyyy',
+                eduTo: 'mm/yyyy',
             }]
         }))
     }
@@ -44,7 +43,6 @@ const Main = () => {
     }
 
     const changeEducationHandler = (e, id) => {
-        console.log(e.target.name, id, e.target.value);
         setCollection((prevCollection) => {
             const newEducation = prevCollection.education.map((educationUnit) => {
                 if(educationUnit.id === id){
@@ -65,11 +63,11 @@ const Main = () => {
             ...prevCollection,
             workExp: [...prevCollection.workExp, {
                 id: uniqid(),
-                jobTitle: '',
-                orgName: '',
-                orgPlace: '',
-                workFrom: '',
-                workTo: '',
+                jobTitle: 'Job Title',
+                orgName: 'Name of Organization',
+                orgPlace: 'Place of Organization',
+                workFrom: 'mm/yyyy',
+                workTo: 'mm/yyyy',
             }]
         }))
     }
