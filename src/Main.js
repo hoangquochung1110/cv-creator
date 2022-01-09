@@ -3,11 +3,14 @@ import { useState } from "react";
 import uniqid from 'uniqid';
 import Resume from "./resume/Resume";
 import { ModeSwitcher } from "./components/Buttons";
-import { sampleCV } from "./utils";
-import { X, Check} from './utils';
+import { FontSelector } from "./components/Inputs";
+import { X, Check, sampleCV} from './utils';
+import styled from "styled-components";
 
 const Main = () => {
     const [collection, setCollection] = useState(sampleCV); // data collection
+    const [mode, setMode] = useState(false);
+    const [font, setFont] = useState('Ubuntu');
 
     const changePersonalHandler = (e, id) => {
         setCollection((prevCollection) => {
@@ -128,40 +131,63 @@ const Main = () => {
         
     }
 
-    const [mode, setMode] = useState(false);
-
 
 
     return (
-        <div className="app-container">
-            <ModeSwitcher
-                value={mode}
-                inactiveLabel={<X/>}
-                activeLabel={<Check/>}
-                onToggle={(mode) => {
-                    setMode(!mode);
-                }}
-            />
-            { !mode ? <Resume collection={collection}/>
-                        :
-                            <Collector
-                                collection={collection} 
-                                onChangePersonal={changePersonalHandler}
-                                onAddEducation={addEducationHandler}
-                                onDeleteEducation={deleteEducationHandler}
-                                onChangeEducation={changeEducationHandler}
-                                onAddWorkExp={addWorkExpHandler}
-                                onDeleteWorkExp={deleteWorkExpHandler}
-                                onChangeWorkExp={changeWorkExpHandler}
-                                onAddSkills={addSkillsHandler}
-                                onDeleteSkills={deleteSkillsHandler}
-                                onChangeSkills={changeSkillsHandler}
-                            />
+        
+        <AppWrapper>
+            <Customizer>
+                <FontSelector 
+                    options={[
+                        { value: 'Roboto', label: 'Roboto' },
+                        { value: 'Calibri', label: 'Calibri' },
+                        { value: 'Ubuntu', label: 'Ubuntu' },
+                        { value: 'Futara', label: 'Futara' }
+                    ]}
+                    onChange={(e) => setFont(e.value)}
+                    
+                />
+                <ModeSwitcher
+                    value={mode}
+                    inactiveLabel={<X/>}
+                    activeLabel={<Check/>}
+                    onToggle={(mode) => {
+                        setMode(!mode);
+                    }}
+                />
+            </Customizer>
+
+            { !mode ?   <Resume 
+                            collection={collection} 
+                            font={font}
+                        />
+                    :
+                        <Collector
+                            collection={collection} 
+                            onChangePersonal={changePersonalHandler}
+                            onAddEducation={addEducationHandler}
+                            onDeleteEducation={deleteEducationHandler}
+                            onChangeEducation={changeEducationHandler}
+                            onAddWorkExp={addWorkExpHandler}
+                            onDeleteWorkExp={deleteWorkExpHandler}
+                            onChangeWorkExp={changeWorkExpHandler}
+                            onAddSkills={addSkillsHandler}
+                            onDeleteSkills={deleteSkillsHandler}
+                            onChangeSkills={changeSkillsHandler}
+                        />
             }              
 
-        </div>
+        </AppWrapper>
     );
 };
 
+const Customizer = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    column-gap: .5rem;
+`
+
+const AppWrapper = styled.div``;
 
 export default Main;

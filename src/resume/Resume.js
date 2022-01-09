@@ -1,8 +1,8 @@
 import Content from "./Content";
 
-const Resume = ({collection}) => {
+const Resume = ({collection, font}) => {
     return (
-        <Content collection={collection}/>
+        <Content collection={collection} font={font}/>
     )
 }
 

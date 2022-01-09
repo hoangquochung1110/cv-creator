@@ -1,3 +1,3 @@
-import {TextInput, TelInput, EmailInput, DescriptionInput} from './Inputs';
+import {TextInput, TelInput, EmailInput, DescriptionInput, FontSelector} from './Inputs';
 
-export {TextInput, TelInput, EmailInput, DescriptionInput};
+export {TextInput, TelInput, EmailInput, DescriptionInput, FontSelector};

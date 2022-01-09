@@ -1,4 +1,5 @@
-import {Input, TextArea} from "./styles";
+import {FontSelectorWrapper, Input, TextArea} from "./styles";
+import Select from 'react-select'
 
 const TextInput = ({
     placeholder, 
@@ -73,4 +74,16 @@ const DescriptionInput = ({
     )
 }
 
-export {TextInput, TelInput, EmailInput, DescriptionInput};
+const FontSelector = ({options, onChange}) => {
+    return (
+        <FontSelectorWrapper>
+            <Select 
+                options={options} 
+                onChange={onChange}
+            />
+        </FontSelectorWrapper>
+    )
+}
+
+
+export {TextInput, TelInput, EmailInput, DescriptionInput, FontSelector};

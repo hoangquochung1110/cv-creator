@@ -2,9 +2,9 @@ import Personal from "./Qualification/Personal";
 import Qualification from "./Qualification";
 import ContentWrapper from "./styles";
 
-const Content = ({collection}) => {
+const Content = ({collection, font}) => {
     return (
-        <ContentWrapper>
+        <ContentWrapper font={font}>
             <Personal personal={collection.personal} />
             <Qualification 
                 education={collection.education} 

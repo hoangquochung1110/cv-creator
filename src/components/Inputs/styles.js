@@ -12,6 +12,12 @@ const TextArea = styled.textarea`
     background: inherit;
 `
 
+const FontSelectorWrapper = styled.div`
+    width: 100px;
+    height: 0px; 
+    font-size: .8rem;
+`;
 
 
-export {Input, TextArea};
+
+export {Input, TextArea, FontSelectorWrapper};
