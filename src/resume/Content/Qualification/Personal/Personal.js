@@ -4,13 +4,13 @@ const Personal = ({personal}) => {
     return(
         <PersonalWrapper>
             <PersonalInfoStyle>
-                <h2>{personal.lname} {personal.fname}</h2>
+                <div>{personal.lname} {personal.fname}</div>
             </PersonalInfoStyle>
                 
             <PersonalContactStyle>
-                <h6>
+                <div>
                     {personal.address} | {personal.email} | {personal.github} | {personal.telephone}
-                </h6>
+                </div>
             </PersonalContactStyle>
         </PersonalWrapper>
     )
