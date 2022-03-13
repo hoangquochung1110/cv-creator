@@ -1,7 +1,7 @@
 import Collector from "./collector";
 import { useState } from "react";
 import uniqid from 'uniqid';
-import Resume from "./resume/Resume";
+import Resume from "./resume";
 import { ModeSwitcher } from "./components/Buttons";
 import { FontSelector } from "./components/Inputs";
 import { X, Check, sampleCV} from './utils';

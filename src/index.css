@@ -96,3 +96,7 @@ select {
     scroll-behavior: auto !important;
   }
 }
+
+[contenteditable] {
+  outline: 0px solid transparent;
+}

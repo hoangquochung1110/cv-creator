@@ -1,18 +1,18 @@
-import Personal from "./Qualification/Personal";
+import Personal from "./Personal";
 import Qualification from "./Qualification";
-import ContentWrapper from "./styles";
+import ResumeWrapper from "./Style";
 
-const Content = ({collection, font}) => {
+const Resume = ({collection, font}) => {
     return (
-        <ContentWrapper font={font}>
+        <ResumeWrapper font={font}>
             <Personal personal={collection.personal} />
             <Qualification 
                 education={collection.education} 
                 workExp={collection.workExp} 
                 skills={collection.skills}
             />
-        </ContentWrapper>
+        </ResumeWrapper>
     )
 }
 
-export default Content;
+export default Resume;

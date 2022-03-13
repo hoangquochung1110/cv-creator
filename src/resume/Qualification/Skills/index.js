@@ -1,4 +1,4 @@
-import { SkillsUnitWrapper, SkillsWrapper } from "./styles"
+import { SkillsUnitWrapper, SkillsWrapper } from "./Styles"
 
 const Skills = ({skills}) => {
     return (
@@ -15,7 +15,7 @@ const Skills = ({skills}) => {
 const SkillsUnit = ({skillsUnit}) => {
     return (
         <SkillsUnitWrapper>
-            <div>{skillsUnit.name}</div>
+            <div contentEditable="true">{skillsUnit.name}</div>
             </SkillsUnitWrapper>
     )
 }

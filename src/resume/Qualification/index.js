@@ -1,11 +1,10 @@
 import Education from './Education';
 import WorkExp from './WorkExp';
 import Skills from './Skills';
-import LineBreak from '../../../components/LineBreak';
-import QualificationWrapper from './styles';
+import LineBreak from '../../components/LineBreak';
+import QualificationWrapper from './Styles';
 
 const Qualification = ({education, workExp, skills}) => {
-    console.log(skills);
     return (
         <QualificationWrapper>
             <LineBreak name="Education"/>

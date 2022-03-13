@@ -4,8 +4,8 @@ import {
     EducationUnitSubWrapper, 
     EducationUnitWrapper, 
     EducationWrapper, 
-} from "./styles"
-import TextAligned from "../../../../styles/TextAligned";
+} from "./Styles"
+import TextAligned from "../../../styles/TextAligned";
 
 const Education  = ({education}) => {
     return (
@@ -23,15 +23,15 @@ const EducationUnit = ({educationUnit}) => {
     return (
         <EducationUnitWrapper>
             <EducationUnitHeaderWrapper>
-                <TextAligned aligned="left" weight="700">{educationUnit.studyProgram}</TextAligned>
-                {educationUnit.eduFrom && educationUnit.eduTo ? <TextAligned aligned="right">{educationUnit.eduFrom} - {educationUnit.eduTo}</TextAligned> : <></>}
+                <TextAligned aligned="left" weight="700" contentEditable="true">{educationUnit.studyProgram}</TextAligned>
+                {educationUnit.eduFrom && educationUnit.eduTo ? <TextAligned aligned="right" contentEditable="true">{educationUnit.eduFrom} - {educationUnit.eduTo}</TextAligned> : <></>}
             </EducationUnitHeaderWrapper>
             <EducationUnitSubWrapper>
-                <TextAligned>{educationUnit.eduName}</TextAligned>
-                <TextAligned aligned="right">{educationUnit.eduPlace}</TextAligned>
+                <TextAligned contentEditable="true">{educationUnit.eduName}</TextAligned>
+                <TextAligned aligned="right" contentEditable="true">{educationUnit.eduPlace}</TextAligned>
             </EducationUnitSubWrapper>
             <EducationUnitDescWrapper>
-                <div className="f-size-80">{educationUnit.description}</div>
+                <div className="f-size-80" contentEditable="true">{educationUnit.description}</div>
             </EducationUnitDescWrapper>
 
             
