@@ -22,6 +22,7 @@ const EducationUnitSubWrapper = styled.div`
 
 const EducationUnitDescWrapper = styled.div`
     display: block;
+    font-size: .8rem;
 `;
 
 

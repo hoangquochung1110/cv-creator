@@ -4,14 +4,14 @@ import Skills from './Skills';
 import LineBreak from '../../components/LineBreak';
 import QualificationWrapper from './Styles';
 
-const Qualification = ({education, workExp, skills}) => {
+const Qualification = ({education, workExp, skills, setSection}) => {
     return (
         <QualificationWrapper>
             <LineBreak name="Education"/>
-            <Education education={education} />
+            <Education education={education} setSection={setSection}/>
 
             <LineBreak name="Work Experience" />
-            <WorkExp workExp={workExp} />
+            <WorkExp workExp={workExp}/>
 
             <LineBreak name="Skills" />
             <Skills skills={skills} />

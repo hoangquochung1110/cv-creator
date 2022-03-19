@@ -10,9 +10,8 @@ import Toolkit from "./toolkit";
 
 const Main = () => {
     const [collection, setCollection] = useState(sampleCV); // data collection
-    const [mode, setMode] = useState(false);
     const [font, setFont] = useState('Ubuntu');
-    const [section, setSection] = useState(null);
+    const [section, setSection] = useState({"name": null, "id": null});
 
     const changePersonalHandler = (e, id) => {
         setCollection((prevCollection) => {
@@ -134,24 +133,47 @@ const Main = () => {
         
     }
 
-    const setTargetSection = (e, section) => {
-        setSection(section);
+    const setTargetSection = (e, section, sectionID) => {
+        setSection({"name": section, "id": sectionID});
     }
 
     const addSection = () => {
-        switch (section){
-            case "education":
-                addEducationHandler();
-                break;
-            case "workExperience":
-                addWorkExpHandler();
-                break;
-            case "skill":
-                addSkillsHandler();
-                break;
-            default:
-                console.log("Error !!!");
-                break;
+        if (section.name !== null && section.id !== null){
+            switch (section.name){
+                case "education":
+                    addEducationHandler();
+                    break;
+                case "workExperience":
+                    addWorkExpHandler();
+                    break;
+                case "skill":
+                    addSkillsHandler();
+                    break;
+                default:
+                    console.log("Error !!!");
+                    break;
+            }
+            // reset section to null after adding
+            setSection({"name": null, "id": null})
+        }
+    }
+
+    const removeSection = (e) => {
+        if (section.name !== null && section.id !== null){
+            switch (section.name){
+                case "education":
+                    deleteEducationHandler(section.id);
+                    break;
+                case "workExperience":
+                    addWorkExpHandler();
+                    break;
+                case "skill":
+                    addSkillsHandler();
+                    break;
+                default:
+                    console.log("Error !!!");
+                    break;
+            }
         }
     }
 
@@ -161,29 +183,14 @@ const Main = () => {
             <AppWrapper>
                 <Toolkit 
                     addSection={addSection}
-                    mode={mode}
-                    setMode={setMode}
+                    removeSection={removeSection}
+                    setFont={setFont}
                 />
-                { !mode ?   <Resume 
-                                collection={collection} 
-                                font={font}
-                                setTargetSection={setTargetSection}
-                            />
-                        :
-                            <Collector
-                                collection={collection} 
-                                onChangePersonal={changePersonalHandler}
-                                onAddEducation={addEducationHandler}
-                                onDeleteEducation={deleteEducationHandler}
-                                onChangeEducation={changeEducationHandler}
-                                onAddWorkExp={addWorkExpHandler}
-                                onDeleteWorkExp={deleteWorkExpHandler}
-                                onChangeWorkExp={changeWorkExpHandler}
-                                onAddSkills={addSkillsHandler}
-                                onDeleteSkills={deleteSkillsHandler}
-                                onChangeSkills={changeSkillsHandler}
-                            />
-                }              
+                <Resume 
+                    collection={collection} 
+                    font={font}
+                    setSection={setTargetSection}
+                />            
             </AppWrapper>
             <Footer/>
         </>

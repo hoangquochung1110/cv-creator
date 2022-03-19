@@ -1,29 +1,27 @@
-import { AddBtn, ModeSwitcher } from "../components/Buttons"; 
-import { X, Check } from '../utils';
-import ToolkitWrapper from "./Styles";
+import { AddBtn, RemoveBtn } from "../components/Buttons"; 
+import { OuterToolkitWrapper, InnerToolkitWrapper} from "./Styles";
 import Select from "../components/Selects";
 
-const Toolkit = ({addSection, mode, setMode}) => {
+const Toolkit = ({addSection, removeSection, setFont}) => {
     return(
-        <ToolkitWrapper>
-            <AddBtn addHandler={addSection}/>
-            <Select
-                options={[
-                    { value: 'Roboto', label: 'Roboto' },
-                    { value: 'Calibri', label: 'Calibri' },
-                    { value: 'Ubuntu', label: 'Ubuntu' },
-                    { value: 'Futara', label: 'Futara' }
-                ]}
-            />
-            <ModeSwitcher
-                        value={mode}
-                        inactiveLabel={<X/>}
-                        activeLabel={<Check/>}
-                        onToggle={(mode) => {
-                            setMode(!mode);
-                        }}
-            />
-        </ToolkitWrapper>
+        <OuterToolkitWrapper>
+            <InnerToolkitWrapper>
+                <AddBtn addHandler={addSection}/>
+                <RemoveBtn removeHandler={removeSection}/>
+                <Select
+                    options={[
+                        { value: 'Roboto', label: 'Roboto' },
+                        { value: 'Calibri', label: 'Calibri' },
+                        { value: 'Ubuntu', label: 'Ubuntu' },
+                        { value: 'Futara', label: 'Futara' }
+                    ]}
+                    onChange={(e) => {
+                        console.log("switch font to: ", e.target.value);
+                        setFont(e.target.value);
+                    }}
+                />
+            </InnerToolkitWrapper>
+        </OuterToolkitWrapper>
     )
 };
 

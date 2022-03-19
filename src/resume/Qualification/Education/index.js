@@ -7,34 +7,40 @@ import {
 } from "./Styles"
 import TextAligned from "../../../styles/TextAligned";
 
-const Education  = ({education}) => {
+const Education  = ({education, setSection}) => {
+
     return (
-        <EducationWrapper>
-                { education.map((educationUnit) => {
-                        return (
-                            <EducationUnit key={educationUnit.id} educationUnit={educationUnit}/>
-                        )
-                })}
+        <EducationWrapper 
+            className="education-section"
+            onClick={(e) => {
+                console.log(e.target.closest(".education-unit").id);
+                const sectionID = e.target.closest(".education-unit").id
+                setSection(e, "education", sectionID);
+            }}
+        >
+            { education.map((educationUnit) => {
+                    return (
+                        <EducationUnit id={educationUnit.id} key={educationUnit.id} educationUnit={educationUnit}/>
+                    )
+            })}
         </EducationWrapper>
     )
 }
 
-const EducationUnit = ({educationUnit}) => {
+const EducationUnit = ({id, educationUnit}) => {
     return (
-        <EducationUnitWrapper>
-            <EducationUnitHeaderWrapper>
-                <TextAligned aligned="left" weight="700" contentEditable="true">{educationUnit.studyProgram}</TextAligned>
-                {educationUnit.eduFrom && educationUnit.eduTo ? <TextAligned aligned="right" contentEditable="true">{educationUnit.eduFrom} - {educationUnit.eduTo}</TextAligned> : <></>}
+        <EducationUnitWrapper id={id} className="education-unit">
+            <EducationUnitHeaderWrapper contentEditable="true">
+                <TextAligned aligned="left" weight="700">{educationUnit.studyProgram}</TextAligned>
+                {educationUnit.eduFrom && educationUnit.eduTo ? <TextAligned aligned="right">{educationUnit.eduFrom} - {educationUnit.eduTo}</TextAligned> : <></>}
             </EducationUnitHeaderWrapper>
-            <EducationUnitSubWrapper>
-                <TextAligned contentEditable="true">{educationUnit.eduName}</TextAligned>
-                <TextAligned aligned="right" contentEditable="true">{educationUnit.eduPlace}</TextAligned>
+            <EducationUnitSubWrapper contentEditable="true">
+                <TextAligned>{educationUnit.eduName}</TextAligned>
+                <TextAligned aligned="right">{educationUnit.eduPlace}</TextAligned>
             </EducationUnitSubWrapper>
-            <EducationUnitDescWrapper>
-                <div className="f-size-80" contentEditable="true">{educationUnit.description}</div>
+            <EducationUnitDescWrapper contentEditable="true">
+                {educationUnit.description}
             </EducationUnitDescWrapper>
-
-            
         </EducationUnitWrapper>
     )
 }

@@ -2,7 +2,7 @@ import Personal from "./Personal";
 import Qualification from "./Qualification";
 import ResumeWrapper from "./Style";
 
-const Resume = ({collection, font}) => {
+const Resume = ({collection, font, setSection}) => {
     return (
         <ResumeWrapper font={font}>
             <Personal personal={collection.personal} />
@@ -10,6 +10,7 @@ const Resume = ({collection, font}) => {
                 education={collection.education} 
                 workExp={collection.workExp} 
                 skills={collection.skills}
+                setSection={setSection}
             />
         </ResumeWrapper>
     )
