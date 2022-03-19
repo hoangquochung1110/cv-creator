@@ -1,9 +1,9 @@
 import { SelectWrapper } from "./Style";
 
-const Select = ({options}) => {
+const Select = ({options, onChange}) => {
     return (
         <SelectWrapper>
-            <select>
+            <select onChange={onChange}>
                 {
                     options.map((option) => {
                         return (
