@@ -2,17 +2,17 @@ import Collector from "./collector";
 import { useState } from "react";
 import uniqid from 'uniqid';
 import Resume from "./resume";
-import { ModeSwitcher } from "./components/Buttons";
-import { FontSelector } from "./components/Inputs";
-import { X, Check, sampleCV} from './utils';
+import { sampleCV } from './utils';
 import styled from "styled-components";
 import Footer from "./layout/Footer";
 import Header from "./layout/Header";
+import Toolkit from "./toolkit";
 
 const Main = () => {
     const [collection, setCollection] = useState(sampleCV); // data collection
     const [mode, setMode] = useState(false);
     const [font, setFont] = useState('Ubuntu');
+    const [section, setSection] = useState(null);
 
     const changePersonalHandler = (e, id) => {
         setCollection((prevCollection) => {
@@ -31,10 +31,11 @@ const Main = () => {
             education: [...prevCollection.education, {
                 id: uniqid(),
                 studyProgram: 'Study Program',
-                eduName: 'Name of Educational Institute',
-                eduPlace: 'Place of Educational Institute',
+                eduName: 'Name of Education',
+                eduPlace: 'Place of Education',
                 eduFrom: 'mm/yyyy',
                 eduTo: 'mm/yyyy',
+                description: 'Courses taken/ Graduate thesis.'
             }]
         }))
     }
@@ -133,36 +134,40 @@ const Main = () => {
         
     }
 
+    const setTargetSection = (e, section) => {
+        setSection(section);
+    }
 
+    const addSection = () => {
+        switch (section){
+            case "education":
+                addEducationHandler();
+                break;
+            case "workExperience":
+                addWorkExpHandler();
+                break;
+            case "skill":
+                addSkillsHandler();
+                break;
+            default:
+                console.log("Error !!!");
+                break;
+        }
+    }
 
     return (
         <>
             <Header/>
             <AppWrapper>
-                <Customizer>
-                    <FontSelector 
-                        options={[
-                            { value: 'Roboto', label: 'Roboto' },
-                            { value: 'Calibri', label: 'Calibri' },
-                            { value: 'Ubuntu', label: 'Ubuntu' },
-                            { value: 'Futara', label: 'Futara' }
-                        ]}
-                        onChange={(e) => setFont(e.value)}
-                        
-                    />
-                    <ModeSwitcher
-                        value={mode}
-                        inactiveLabel={<X/>}
-                        activeLabel={<Check/>}
-                        onToggle={(mode) => {
-                            setMode(!mode);
-                        }}
-                    />
-                </Customizer>
-
+                <Toolkit 
+                    addSection={addSection}
+                    mode={mode}
+                    setMode={setMode}
+                />
                 { !mode ?   <Resume 
                                 collection={collection} 
                                 font={font}
+                                setTargetSection={setTargetSection}
                             />
                         :
                             <Collector
@@ -184,13 +189,6 @@ const Main = () => {
         </>
     );
 };
-
-const Customizer = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-    column-gap: .5rem;
-`
 
 const AppWrapper = styled.div``;
 
