@@ -12,16 +12,17 @@ const Skills = ({skills, setSection}) => {
         >
             { skills.map((skillsUnit) => {
                     return (
-                        <SkillsUnit key={skillsUnit.id} skillsUnit={skillsUnit}/>
+                        <SkillsUnit id={skillsUnit.id} key={skillsUnit.id} skillsUnit={skillsUnit}/>
                     )
             })}
         </SkillsWrapper>
     )
 }
 
-const SkillsUnit = ({skillsUnit}) => {
+const SkillsUnit = ({id, skillsUnit}) => {
     return (
         <SkillsUnitWrapper
+            id={id}
             className="skills-unit"
             contentEditable="true"
         >
