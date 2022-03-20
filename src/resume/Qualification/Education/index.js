@@ -30,13 +30,17 @@ const Education  = ({education, setSection}) => {
 const EducationUnit = ({id, educationUnit}) => {
     return (
         <EducationUnitWrapper id={id} className="education-unit">
-            <EducationUnitHeaderWrapper contentEditable="true">
-                <TextAligned aligned="left" weight="700">{educationUnit.studyProgram}</TextAligned>
-                {educationUnit.eduFrom && educationUnit.eduTo ? <TextAligned aligned="right">{educationUnit.eduFrom} - {educationUnit.eduTo}</TextAligned> : <></>}
+            <EducationUnitHeaderWrapper>
+                <div contentEditable="true">{educationUnit.studyProgram}</div>
+                {educationUnit.eduFrom && educationUnit.eduTo ? 
+                    <div contentEditable="true">{educationUnit.eduFrom} - {educationUnit.eduTo}</div> 
+                : 
+                    <></>
+                }
             </EducationUnitHeaderWrapper>
-            <EducationUnitSubWrapper contentEditable="true">
-                <TextAligned>{educationUnit.eduName}</TextAligned>
-                <TextAligned aligned="right">{educationUnit.eduPlace}</TextAligned>
+            <EducationUnitSubWrapper>
+                <div contentEditable="true">{educationUnit.eduName}</div>
+                <div contentEditable="true">{educationUnit.eduPlace}</div>
             </EducationUnitSubWrapper>
             <EducationUnitDescWrapper contentEditable="true">
                 {educationUnit.description}

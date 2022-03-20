@@ -182,7 +182,7 @@ const Main = () => {
     return (
         <>
             <Header/>
-            <AppWrapper>
+            <AppWrapper id="app">
                 <Toolkit 
                     addSection={addSection}
                     removeSection={removeSection}
