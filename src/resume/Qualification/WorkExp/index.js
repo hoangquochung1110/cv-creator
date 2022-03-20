@@ -2,21 +2,27 @@ import uniqid from 'uniqid';
 import TextAligned from '../../../styles/TextAligned';
 import { WorkExpUnitDescWrapper, WorkExpUnitHeaderWrapper, WorkExpUnitSubWrapper, WorkExpWrapper, WorkExpUnitWrapper } from './Styles';
 
-const WorkExp = ({workExp}) => {
+const WorkExp = ({workExp, setSection}) => {
     return (
-        <WorkExpWrapper>
-                { workExp.map((workExpUnit) => {
-                    return (
-                        <WorkExpUnit key={workExpUnit.id} workExpUnit={workExpUnit} />
-                    )
-                })}
+        <WorkExpWrapper
+            className='work-exp-section'
+            onClick={(e) => {
+                const sectionID = e.target.closest(".work-exp-unit").id;
+                setSection(e, "workExperience", sectionID);
+            }}
+        >
+            { workExp.map((workExpUnit) => {
+                return (
+                    <WorkExpUnit id={workExpUnit.id} key={workExpUnit.id} workExpUnit={workExpUnit} />
+                )
+            })}
         </WorkExpWrapper>
     )
 }
 
-const WorkExpUnit = ({workExpUnit}) => {
+const WorkExpUnit = ({workExpUnit, id}) => {
     return (
-        <WorkExpUnitWrapper>
+        <WorkExpUnitWrapper id={id} className="work-exp-unit">
             <WorkExpUnitHeaderWrapper>
                 <TextAligned weight="700" contentEditable="true">{workExpUnit.jobTitle}</TextAligned>
                 {workExpUnit.workFrom && workExpUnit.workTo ? <TextAligned aligned="right" contentEditable="true">{workExpUnit.workFrom} - {workExpUnit.workTo}</TextAligned> : <></>}
@@ -27,7 +33,7 @@ const WorkExpUnit = ({workExpUnit}) => {
             </WorkExpUnitSubWrapper>
             <WorkExpUnitDescWrapper>
                     {workExpUnit.achievements.split('. ').map((sentence) => {
-                        return <div key={uniqid()} className="f-size-80" contentEditable="true">{sentence}</div>
+                        return <div key={uniqid()} contentEditable="true">{sentence}</div>
                     })}
             </WorkExpUnitDescWrapper>
 

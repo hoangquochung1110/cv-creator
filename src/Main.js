@@ -1,4 +1,3 @@
-import Collector from "./collector";
 import { useState } from "react";
 import uniqid from 'uniqid';
 import Resume from "./resume";
@@ -73,6 +72,7 @@ const Main = () => {
                 orgPlace: 'Place of Organization',
                 workFrom: 'mm/yyyy',
                 workTo: 'mm/yyyy',
+                achievements: "Tell something about your achievements"
             }]
         }))
     }
@@ -108,7 +108,8 @@ const Main = () => {
             'skills': [...prevCollection.skills, {
                 key: newKey,
                 isDefaultUnit: false,
-                id: newKey
+                id: newKey,
+                name: "Skills"
             }]
             
         }))
@@ -146,7 +147,7 @@ const Main = () => {
                 case "workExperience":
                     addWorkExpHandler();
                     break;
-                case "skill":
+                case "skills":
                     addSkillsHandler();
                     break;
                 default:
@@ -158,22 +159,23 @@ const Main = () => {
         }
     }
 
-    const removeSection = (e) => {
+    const removeSection = () => {
         if (section.name !== null && section.id !== null){
             switch (section.name){
                 case "education":
                     deleteEducationHandler(section.id);
                     break;
                 case "workExperience":
-                    addWorkExpHandler();
+                    deleteWorkExpHandler(section.id);
                     break;
-                case "skill":
-                    addSkillsHandler();
+                case "skills":
+                    deleteSkillsHandler(section.id);
                     break;
                 default:
                     console.log("Error !!!");
                     break;
             }
+            setSection({"name": null, "id": null});
         }
     }
 

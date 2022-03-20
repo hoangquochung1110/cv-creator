@@ -11,10 +11,10 @@ const Qualification = ({education, workExp, skills, setSection}) => {
             <Education education={education} setSection={setSection}/>
 
             <LineBreak name="Work Experience" />
-            <WorkExp workExp={workExp}/>
+            <WorkExp workExp={workExp} setSection={setSection}/>
 
-            <LineBreak name="Skills" />
-            <Skills skills={skills} />
+            <LineBreak name="Skills"/>
+            <Skills skills={skills} setSection={setSection}/>
 
         </QualificationWrapper>
     )

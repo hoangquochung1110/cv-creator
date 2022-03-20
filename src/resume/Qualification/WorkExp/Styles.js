@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const WorkExpWrapper = styled.div`
+    padding-bottom: .5rem;
 `
 
 const WorkExpUnitWrapper = styled.div`
@@ -22,6 +23,7 @@ const WorkExpUnitSubWrapper = styled.div`
 
 const WorkExpUnitDescWrapper = styled.div`
     display: block;
+    font-size: .8rem;
 `;
 
 export { 
