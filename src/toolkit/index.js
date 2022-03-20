@@ -1,14 +1,28 @@
 import { AddBtn, RemoveBtn } from "../components/Buttons"; 
 import { OuterToolkitWrapper, InnerToolkitWrapper} from "./Styles";
 import Select from "../components/Selects";
+import { useEffect } from "react";
 
-const Toolkit = ({addSection, removeSection, setFont}) => {
+const Toolkit = ({
+    addSection,
+    removeSection,
+    setFontFamily,
+    setFontSize
+}) => {
+
+    useEffect(() => {
+        // Set default value when onload
+        document.querySelector("#font-family-selector").value = "Ubuntu";
+        document.querySelector("#font-size-selector").value = "20px";
+    }, [])
+
     return(
         <OuterToolkitWrapper>
             <InnerToolkitWrapper>
                 <AddBtn addHandler={addSection}/>
                 <RemoveBtn removeHandler={removeSection}/>
                 <Select
+                    id="font-family-selector"
                     options={[
                         { value: 'Roboto', label: 'Roboto' },
                         { value: 'Calibri', label: 'Calibri' },
@@ -16,10 +30,21 @@ const Toolkit = ({addSection, removeSection, setFont}) => {
                         { value: 'Futara', label: 'Futara' }
                     ]}
                     onChange={(e) => {
-                        console.log("switch font to: ", e.target.value);
-                        setFont(e.target.value);
+                        setFontFamily(e.target.value);
                     }}
                 />
+                <Select
+                    id="font-size-selector"
+                    options={[
+                        { value: "15px", label: "S" },
+                        { value: "20px", label: "M" },
+                        { value: "25px", label: "L" },
+                    ]}
+                    onChange={(e) => {
+                        setFontSize(e.target.value);
+                    }}
+                >
+                </Select>
             </InnerToolkitWrapper>
         </OuterToolkitWrapper>
     )

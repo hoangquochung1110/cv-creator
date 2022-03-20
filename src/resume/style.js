@@ -6,7 +6,8 @@ const ResumeWrapper = styled.div`
     box-shadow:
     12.5px 12.5px 10px rgba(0, 0, 0, 0.043),
     100px 100px 80px rgba(0, 0, 0, 0.07);
-    font-family: ${props => props.font || 'Ubuntu'};
+    font-family: ${props => props.fontFamily || 'Ubuntu'};
+    font-size: ${props => props.fontSize || '20px'};
 `;
 
 export default ResumeWrapper;

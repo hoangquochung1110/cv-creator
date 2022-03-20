@@ -9,7 +9,8 @@ import Toolkit from "./toolkit";
 
 const Main = () => {
     const [collection, setCollection] = useState(sampleCV); // data collection
-    const [font, setFont] = useState('Ubuntu');
+    const [fontFamily, setFontFamily] = useState(null);
+    const [fontSize, setFontSize] = useState(null);
     const [section, setSection] = useState({"name": null, "id": null});
 
     const changePersonalHandler = (e, id) => {
@@ -187,11 +188,13 @@ const Main = () => {
                 <Toolkit 
                     addSection={addSection}
                     removeSection={removeSection}
-                    setFont={setFont}
+                    setFontFamily={setFontFamily}
+                    setFontSize={setFontSize}
                 />
                 <Resume 
                     collection={collection} 
-                    font={font}
+                    fontFamily={fontFamily}
+                    fontSize={fontSize}
                     setSection={setTargetSection}
                 />            
             </AppWrapper>
