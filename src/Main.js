@@ -3,8 +3,7 @@ import uniqid from 'uniqid';
 import Resume from "./resume";
 import { sampleCV } from './utils';
 import styled from "styled-components";
-import { Header, Footer } from "./parts";
-import Toolkit from "./toolkit";
+import { Header, Footer, Toolkit } from "./parts";
 
 const Main = () => {
     const [collection, setCollection] = useState(sampleCV); // data collection

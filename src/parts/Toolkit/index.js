@@ -1,6 +1,6 @@
-import { AddBtn, RemoveBtn } from "../components/Buttons"; 
-import { OuterToolkitWrapper, InnerToolkitWrapper} from "./Styles";
-import Select from "../components/Selects";
+import { AddBtn, RemoveBtn } from "../../components/Buttons"; 
+import { OuterToolkitWrapper, InnerToolkitWrapper} from "./Style";
+import Select from "../../components/Selects";
 import { useEffect } from "react";
 
 const Toolkit = ({

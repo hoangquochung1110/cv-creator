@@ -10,7 +10,6 @@ const InnerToolkitWrapper = styled.div`
         justify-content: center;
         align-items: center;
         column-gap: 10px;
-
         margin-left: auto;
         margin-right: auto;
         padding-top: .2rem;
@@ -19,7 +18,6 @@ const InnerToolkitWrapper = styled.div`
         padding-right: 1rem;
         min-height: 1.5rem;
         width: fit-content;
-
         border: 1px groove var(--dark-blue);
         border-radius: 15px;
         background-color: var(--midnight-blue);
