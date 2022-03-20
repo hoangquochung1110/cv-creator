@@ -24,16 +24,20 @@ const WorkExpUnit = ({workExpUnit, id}) => {
     return (
         <WorkExpUnitWrapper id={id} className="work-exp-unit">
             <WorkExpUnitHeaderWrapper>
-                <TextAligned weight="700" contentEditable="true">{workExpUnit.jobTitle}</TextAligned>
-                {workExpUnit.workFrom && workExpUnit.workTo ? <TextAligned aligned="right" contentEditable="true">{workExpUnit.workFrom} - {workExpUnit.workTo}</TextAligned> : <></>}
+                <div contentEditable="true">{workExpUnit.jobTitle}</div>
+                {workExpUnit.workFrom && workExpUnit.workTo ? 
+                    <div contentEditable="true">{workExpUnit.workFrom} - {workExpUnit.workTo}</div> 
+                : 
+                    <></>
+                }
             </WorkExpUnitHeaderWrapper>
             <WorkExpUnitSubWrapper>
-                <TextAligned contentEditable="true">{workExpUnit.orgName}</TextAligned>
-                <TextAligned aligned="right" contentEditable="true">{workExpUnit.orgPlace}</TextAligned>
+                <div contentEditable="true">{workExpUnit.orgName}</div>
+                <div contentEditable="true">{workExpUnit.orgPlace}</div>
             </WorkExpUnitSubWrapper>
-            <WorkExpUnitDescWrapper>
+            <WorkExpUnitDescWrapper contentEditable="true">
                     {workExpUnit.achievements.split('. ').map((sentence) => {
-                        return <div key={uniqid()} contentEditable="true">{sentence}</div>
+                        return <div key={uniqid()}>{sentence}</div>
                     })}
             </WorkExpUnitDescWrapper>
 
