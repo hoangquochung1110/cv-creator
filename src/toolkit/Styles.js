@@ -7,16 +7,19 @@ const OuterToolkitWrapper = styled.div`
 
 const InnerToolkitWrapper = styled.div`
         display: flex;
-        justify-content: space-evenly;
+        justify-content: center;
         align-items: center;
-        column-gap: .2rem;
+        column-gap: 10px;
 
-        margin-left: 30%;
-        margin-right: 30%;
+        margin-left: auto;
+        margin-right: auto;
         padding-top: .2rem;
         padding-bottom: .2rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
         min-height: 1.5rem;
-        
+        width: fit-content;
+
         border: 1px groove var(--dark-blue);
         border-radius: 15px;
         background-color: var(--midnight-blue);
