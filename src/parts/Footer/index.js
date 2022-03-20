@@ -1,4 +1,4 @@
-import { FooterWrapper, CopyrightWrapper } from "./style";
+import { FooterWrapper, CopyrightWrapper } from "./Style";
 
 const Footer = () => {
     return (

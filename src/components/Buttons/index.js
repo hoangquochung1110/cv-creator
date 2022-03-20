@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { ToggleButtonWrapper, AddRemoveBtnWrapper } from "./styles";
+import { ToggleButtonWrapper, AddRemoveBtnWrapper } from "./Styles";
 import { X, Check } from '../../utils';
 import ToggleButton from 'react-toggle-button';
 
@@ -35,6 +35,5 @@ const ModeSwitcher = ({value, onToggle}) => {
     )
 
 }
-
 
 export { AddBtn, RemoveBtn, ModeSwitcher}

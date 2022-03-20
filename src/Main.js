@@ -3,8 +3,7 @@ import uniqid from 'uniqid';
 import Resume from "./resume";
 import { sampleCV } from './utils';
 import styled from "styled-components";
-import Footer from "./layout/Footer";
-import Header from "./layout/Header";
+import { Header, Footer } from "./parts";
 import Toolkit from "./toolkit";
 
 const Main = () => {
