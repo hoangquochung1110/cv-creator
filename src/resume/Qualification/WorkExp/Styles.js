@@ -31,7 +31,7 @@ const WorkExpUnitSubWrapper = styled.div`
     };
 `;
 
-const WorkExpUnitDescWrapper = styled.div`
+const WorkExpUnitDescriptionWrapper = styled.div`
     display: block;
     font-size: .8rem;
 `;
@@ -41,5 +41,5 @@ export {
     WorkExpUnitWrapper, 
     WorkExpUnitHeaderWrapper, 
     WorkExpUnitSubWrapper, 
-    WorkExpUnitDescWrapper 
+    WorkExpUnitDescriptionWrapper 
 }

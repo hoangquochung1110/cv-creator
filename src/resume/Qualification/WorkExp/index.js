@@ -1,6 +1,10 @@
-import uniqid from 'uniqid';
-import TextAligned from '../../../styles/TextAligned';
-import { WorkExpUnitDescWrapper, WorkExpUnitHeaderWrapper, WorkExpUnitSubWrapper, WorkExpWrapper, WorkExpUnitWrapper } from './Styles';
+import { 
+    WorkExpUnitDescriptionWrapper,
+    WorkExpUnitHeaderWrapper,
+    WorkExpUnitSubWrapper,
+    WorkExpWrapper,
+    WorkExpUnitWrapper 
+} from './Styles';
 
 const WorkExp = ({workExp, setSection}) => {
     return (
@@ -35,14 +39,19 @@ const WorkExpUnit = ({workExpUnit, id}) => {
                 <div contentEditable="true">{workExpUnit.orgName}</div>
                 <div contentEditable="true">{workExpUnit.orgPlace}</div>
             </WorkExpUnitSubWrapper>
-            <WorkExpUnitDescWrapper contentEditable="true">
-                    {workExpUnit.achievements.split('. ').map((sentence) => {
-                        return <div key={uniqid()}>{sentence}</div>
-                    })}
-            </WorkExpUnitDescWrapper>
+            {workExpUnit.achievements.map((text) => {
+                return <WorkExpDescription key={id} text={text}/>
+            })}
 
         </WorkExpUnitWrapper>
     )
 }
 
+const WorkExpDescription = ({text}) => {
+    return(
+        <WorkExpUnitDescriptionWrapper>
+            <div contentEditable="true">{text}</div>
+        </WorkExpUnitDescriptionWrapper>
+    )
+}
 export default WorkExp;

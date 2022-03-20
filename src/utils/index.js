@@ -51,7 +51,10 @@ export const sampleCV = {
             orgPlace: 'Los Angeles, CA',
             workFrom: '01/2020',
             workTo: 'Present',
-            achievements: 'Kaggle Big Data: a Chinese grocery store had more than 800K transactions from November 2000 to February 2001. Write PySpark code to process and clean files of more than 1.5 million rows and to do feature selections.'
+            achievements: [
+              'Kaggle Big Data: a Chinese grocery store had more than 800K transactions from November 2000 to February 2001.',
+              'Write PySpark code to process and clean files of more than 1.5 million rows and to do feature selections.'
+            ]
         },
         {
             id: uniqid(),
@@ -61,7 +64,10 @@ export const sampleCV = {
             orgPlace: 'San Jose, CA',
             workFrom: '01/2019',
             workTo: '01/2020',
-            achievements: 'Implement a distributed version of SON algorithm for finding frequent itemsets in PySpark. Utilize XGboost and Item-based collaborative filtering to predict the score a user would rate a business'
+            achievements: [
+              'Implement a distributed version of SON algorithm for finding frequent itemsets in PySpark.',
+              'Utilize XGboost and Item-based collaborative filtering to predict the score a user would rate a business'
+            ]
 
         },
         {
@@ -72,7 +78,9 @@ export const sampleCV = {
             orgPlace: 'Place of organization',
             workFrom: 'mm/yyyy',
             workTo: 'mm/yyyy',
-            achievements: 'Achievements.'
+            achievements: [
+              'Achievements.'
+            ]
 
         }
     ],

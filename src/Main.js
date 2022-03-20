@@ -89,6 +89,7 @@ const Main = () => {
         setCollection((prevCollection) => {
             const newWorkExp = prevCollection.workExp.map((workExpUnit) => {
                 if(workExpUnit.id === id){
+                    // achievements now is an array. need to refactor later on.
                     workExpUnit[e.target.name] = e.target.value;
                 } 
                 return workExpUnit;
