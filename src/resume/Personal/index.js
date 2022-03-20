@@ -1,14 +1,14 @@
-import { PersonalContactStyle, PersonalInfoStyle, PersonalWrapper } from "./styles";
+import { PersonalContactStyle, PersonalInfoStyle, PersonalWrapper } from "./Styles";
 
 const Personal = ({personal}) => {
     return(
         <PersonalWrapper>
             <PersonalInfoStyle>
-                <div>{personal.lname} {personal.fname}</div>
+                <div contentEditable="true">{personal.lname} {personal.fname}</div>
             </PersonalInfoStyle>
                 
             <PersonalContactStyle>
-                <div>
+                <div contentEditable="true">
                     {personal.address} | {personal.email} | {personal.github} | {personal.telephone}
                 </div>
             </PersonalContactStyle>

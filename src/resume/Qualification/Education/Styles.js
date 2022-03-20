@@ -12,16 +12,28 @@ const EducationUnitWrapper = styled.div`
 
 const EducationUnitHeaderWrapper = styled.div`
     display: grid;
-  grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+
+    & div:first-child{
+        font-weight: 700;
+    }
+    & div:nth-child(2){    
+        text-align: right;
+    };
 `;
 
 const EducationUnitSubWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+
+    & div:nth-child(2){    
+        text-align: right;
+    };
 `;
 
 const EducationUnitDescWrapper = styled.div`
     display: block;
+    font-size: .8rem;
 `;
 
 

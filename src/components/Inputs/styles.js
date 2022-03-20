@@ -13,9 +13,8 @@ const TextArea = styled.textarea`
 `
 
 const FontSelectorWrapper = styled.div`
-    width: 100px;
-    height: 0px; 
-    font-size: .8rem;
+    width: 120px;
+    // height: 0px; 
 `;
 
 

@@ -4,12 +4,16 @@
   "private": true,
   "homepage": "https://hoangquochung1110.github.io/cv-creator/",
   "dependencies": {
+    "@ant-design/icons": "^4.7.0",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "bootstrap": "^5.1.3",
     "eslint": "^7.32.0",
     "react": "^17.0.2",
+    "react-bootstrap": "^2.2.1",
     "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
     "react-scripts": "4.0.3",
     "react-select": "^5.2.1",
     "react-toggle-button": "^2.2.0",
@@ -44,6 +48,8 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^3.2.3"
+    "gh-pages": "^3.2.3",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^4.9.2"
   }
 }

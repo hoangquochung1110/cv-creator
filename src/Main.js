@@ -1,18 +1,16 @@
-import Collector from "./collector";
 import { useState } from "react";
 import uniqid from 'uniqid';
-import Resume from "./resume/Resume";
-import { ModeSwitcher } from "./components/Buttons";
-import { FontSelector } from "./components/Inputs";
-import { X, Check, sampleCV} from './utils';
+import Resume from "./resume";
+import { sampleCV } from './utils';
 import styled from "styled-components";
 import Footer from "./layout/Footer";
 import Header from "./layout/Header";
+import Toolkit from "./toolkit";
 
 const Main = () => {
     const [collection, setCollection] = useState(sampleCV); // data collection
-    const [mode, setMode] = useState(false);
     const [font, setFont] = useState('Ubuntu');
+    const [section, setSection] = useState({"name": null, "id": null});
 
     const changePersonalHandler = (e, id) => {
         setCollection((prevCollection) => {
@@ -31,10 +29,11 @@ const Main = () => {
             education: [...prevCollection.education, {
                 id: uniqid(),
                 studyProgram: 'Study Program',
-                eduName: 'Name of Educational Institute',
-                eduPlace: 'Place of Educational Institute',
+                eduName: 'Name of Education',
+                eduPlace: 'Place of Education',
                 eduFrom: 'mm/yyyy',
                 eduTo: 'mm/yyyy',
+                description: 'Courses taken/ Graduate thesis.'
             }]
         }))
     }
@@ -73,6 +72,7 @@ const Main = () => {
                 orgPlace: 'Place of Organization',
                 workFrom: 'mm/yyyy',
                 workTo: 'mm/yyyy',
+                achievements: "Tell something about your achievements"
             }]
         }))
     }
@@ -89,6 +89,7 @@ const Main = () => {
         setCollection((prevCollection) => {
             const newWorkExp = prevCollection.workExp.map((workExpUnit) => {
                 if(workExpUnit.id === id){
+                    // achievements now is an array. need to refactor later on.
                     workExpUnit[e.target.name] = e.target.value;
                 } 
                 return workExpUnit;
@@ -108,7 +109,8 @@ const Main = () => {
             'skills': [...prevCollection.skills, {
                 key: newKey,
                 isDefaultUnit: false,
-                id: newKey
+                id: newKey,
+                name: "Skills"
             }]
             
         }))
@@ -133,64 +135,70 @@ const Main = () => {
         
     }
 
+    const setTargetSection = (e, section, sectionID) => {
+        setSection({"name": section, "id": sectionID});
+    }
 
+    const addSection = () => {
+        if (section.name !== null && section.id !== null){
+            switch (section.name){
+                case "education":
+                    addEducationHandler();
+                    break;
+                case "workExperience":
+                    addWorkExpHandler();
+                    break;
+                case "skills":
+                    addSkillsHandler();
+                    break;
+                default:
+                    console.log("Error !!!");
+                    break;
+            }
+            // reset section to null after adding
+            setSection({"name": null, "id": null})
+        }
+    }
+
+    const removeSection = () => {
+        if (section.name !== null && section.id !== null){
+            switch (section.name){
+                case "education":
+                    deleteEducationHandler(section.id);
+                    break;
+                case "workExperience":
+                    deleteWorkExpHandler(section.id);
+                    break;
+                case "skills":
+                    deleteSkillsHandler(section.id);
+                    break;
+                default:
+                    console.log("Error !!!");
+                    break;
+            }
+            setSection({"name": null, "id": null});
+        }
+    }
 
     return (
         <>
             <Header/>
-            <AppWrapper>
-                <Customizer>
-                    <FontSelector 
-                        options={[
-                            { value: 'Roboto', label: 'Roboto' },
-                            { value: 'Calibri', label: 'Calibri' },
-                            { value: 'Ubuntu', label: 'Ubuntu' },
-                            { value: 'Futara', label: 'Futara' }
-                        ]}
-                        onChange={(e) => setFont(e.value)}
-                        
-                    />
-                    <ModeSwitcher
-                        value={mode}
-                        inactiveLabel={<X/>}
-                        activeLabel={<Check/>}
-                        onToggle={(mode) => {
-                            setMode(!mode);
-                        }}
-                    />
-                </Customizer>
-
-                { !mode ?   <Resume 
-                                collection={collection} 
-                                font={font}
-                            />
-                        :
-                            <Collector
-                                collection={collection} 
-                                onChangePersonal={changePersonalHandler}
-                                onAddEducation={addEducationHandler}
-                                onDeleteEducation={deleteEducationHandler}
-                                onChangeEducation={changeEducationHandler}
-                                onAddWorkExp={addWorkExpHandler}
-                                onDeleteWorkExp={deleteWorkExpHandler}
-                                onChangeWorkExp={changeWorkExpHandler}
-                                onAddSkills={addSkillsHandler}
-                                onDeleteSkills={deleteSkillsHandler}
-                                onChangeSkills={changeSkillsHandler}
-                            />
-                }              
+            <AppWrapper id="app">
+                <Toolkit 
+                    addSection={addSection}
+                    removeSection={removeSection}
+                    setFont={setFont}
+                />
+                <Resume 
+                    collection={collection} 
+                    font={font}
+                    setSection={setTargetSection}
+                />            
             </AppWrapper>
             <Footer/>
         </>
     );
 };
-
-const Customizer = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-    column-gap: .5rem;
-`
 
 const AppWrapper = styled.div``;
 
