@@ -5,7 +5,7 @@ const EducationWrapper = styled.div`
 
 const EducationUnitWrapper = styled.div`
     display: grid;
-    grid-template-rows: 1.5rem 1.5rem 1.5rem;
+    grid-template-rows: 1.5rem 1.5rem auto-fit;
     row-gap: .3rem;
     padding-bottom: .5rem;
 `
