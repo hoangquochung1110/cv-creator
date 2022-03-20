@@ -5,22 +5,13 @@ import { sampleCV } from './utils';
 import styled from "styled-components";
 import { Header, Footer, Toolkit } from "./parts";
 
+
 const Main = () => {
     const [collection, setCollection] = useState(sampleCV); // data collection
     const [fontFamily, setFontFamily] = useState(null);
     const [fontSize, setFontSize] = useState(null);
-    const [section, setSection] = useState({"name": null, "id": null});
-
-    const changePersonalHandler = (e, id) => {
-        setCollection((prevCollection) => {
-            const newPersonal = prevCollection.personal;
-            newPersonal[id] = e.target.value;
-            return {
-                ...prevCollection,
-                personal: newPersonal
-            }
-        })
-    }
+    const [section, setSection] = useState({"name": null, "id": null}); // determine which element to add/remove
+    const [onClicked, setOnClicked] = useState(false); // display add/remove btns if onClicked
 
     const addEducationHandler = () => {
         setCollection((prevCollection) => ({
@@ -45,22 +36,6 @@ const Main = () => {
         })
     }
 
-    const changeEducationHandler = (e, id) => {
-        setCollection((prevCollection) => {
-            const newEducation = prevCollection.education.map((educationUnit) => {
-                if(educationUnit.id === id){
-                    educationUnit[e.target.name] = e.target.value;
-                } 
-                return educationUnit;
-            });
-
-            return {
-                ...prevCollection,
-                education: [...newEducation]
-            }                
-        })
-    }
-
     const addWorkExpHandler = () => {
         setCollection((prevCollection) => ({
             ...prevCollection,
@@ -71,7 +46,7 @@ const Main = () => {
                 orgPlace: 'Place of Organization',
                 workFrom: 'mm/yyyy',
                 workTo: 'mm/yyyy',
-                achievements: "Tell something about your achievements"
+                achievements: ["Tell something about your achievements"]
             }]
         }))
     }
@@ -81,23 +56,6 @@ const Main = () => {
             const newWorkExp= prevCollection.workExp
             .filter((newWorkExpUnit) => newWorkExpUnit.id !== id)
             return {...prevCollection, workExp: [...newWorkExp]};
-        })
-    }
-
-    const changeWorkExpHandler = (e, id) => {
-        setCollection((prevCollection) => {
-            const newWorkExp = prevCollection.workExp.map((workExpUnit) => {
-                if(workExpUnit.id === id){
-                    // achievements now is an array. need to refactor later on.
-                    workExpUnit[e.target.name] = e.target.value;
-                } 
-                return workExpUnit;
-            });
-
-            return {
-                ...prevCollection,
-                workExp: [...newWorkExp]
-            }                
         })
     }
 
@@ -123,17 +81,6 @@ const Main = () => {
         })
     }
 
-    const changeSkillsHandler = (e, id) => {
-        setCollection((prevCollection) => {
-            const newSkills = prevCollection.skills.map((skillsUnit) => {
-                if(skillsUnit.id === id) return {...skillsUnit, name: e.target.value}
-                return {...skillsUnit};
-            })
-            return {...prevCollection, skills: [...newSkills]};
-        })
-        
-    }
-
     const setTargetSection = (e, section, sectionID) => {
         setSection({"name": section, "id": sectionID});
     }
@@ -155,7 +102,8 @@ const Main = () => {
                     break;
             }
             // reset section to null after adding
-            setSection({"name": null, "id": null})
+            setSection({"name": null, "id": null});
+            setOnClicked(!onClicked);
         }
     }
 
@@ -176,6 +124,7 @@ const Main = () => {
                     break;
             }
             setSection({"name": null, "id": null});
+            setOnClicked(!onClicked);
         }
     }
 
@@ -188,12 +137,14 @@ const Main = () => {
                     removeSection={removeSection}
                     setFontFamily={setFontFamily}
                     setFontSize={setFontSize}
+                    onClicked={onClicked}
                 />
                 <Resume 
                     collection={collection} 
                     fontFamily={fontFamily}
                     fontSize={fontSize}
                     setSection={setTargetSection}
+                    setOnClicked={() => setOnClicked(!onClicked)}
                 />            
             </AppWrapper>
             <Footer/>

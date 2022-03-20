@@ -3,11 +3,13 @@ import { OuterToolkitWrapper, InnerToolkitWrapper} from "./Style";
 import Select from "../../components/Selects";
 import { useEffect } from "react";
 
+
 const Toolkit = ({
     addSection,
     removeSection,
     setFontFamily,
-    setFontSize
+    setFontSize,
+    onClicked
 }) => {
 
     useEffect(() => {
@@ -16,11 +18,18 @@ const Toolkit = ({
         document.querySelector("#font-size-selector").value = "20px";
     }, [])
 
+
     return(
         <OuterToolkitWrapper>
             <InnerToolkitWrapper>
-                <AddBtn addHandler={addSection}/>
-                <RemoveBtn removeHandler={removeSection}/>
+                { onClicked ?
+                    <>
+                        <AddBtn addHandler={addSection}/>
+                        <RemoveBtn removeHandler={removeSection}/>
+                    </>
+                    :
+                    null
+                }
                 <Select
                     id="font-family-selector"
                     options={[

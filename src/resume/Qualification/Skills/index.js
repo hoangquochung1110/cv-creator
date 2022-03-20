@@ -1,6 +1,6 @@
 import { SkillsUnitWrapper, SkillsWrapper } from "./Styles"
 
-const Skills = ({skills, setSection}) => {
+const Skills = ({skills, setSection, setOnClicked}) => {
     return (
         <SkillsWrapper
             className="skills-section"
@@ -8,6 +8,7 @@ const Skills = ({skills, setSection}) => {
                 const sectionID = e.target.id;
                 console.log(e.target);
                 setSection(e, "skills", sectionID);
+                setOnClicked();
             }}
         >
             { skills.map((skillsUnit) => {

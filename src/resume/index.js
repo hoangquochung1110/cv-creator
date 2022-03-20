@@ -6,7 +6,8 @@ const Resume = ({
     collection,
     fontFamily,
     fontSize,
-    setSection
+    setSection,
+    setOnClicked
 }) => {
     return (
         <ResumeWrapper fontSize={fontSize} fontFamily={fontFamily}>
@@ -16,6 +17,7 @@ const Resume = ({
                 workExp={collection.workExp} 
                 skills={collection.skills}
                 setSection={setSection}
+                setOnClicked={setOnClicked}
             />
         </ResumeWrapper>
     )

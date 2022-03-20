@@ -6,13 +6,14 @@ import {
     WorkExpUnitWrapper 
 } from './Styles';
 
-const WorkExp = ({workExp, setSection}) => {
+const WorkExp = ({workExp, setSection, setOnClicked}) => {
     return (
         <WorkExpWrapper
             className='work-exp-section'
             onClick={(e) => {
                 const sectionID = e.target.closest(".work-exp-unit").id;
                 setSection(e, "workExperience", sectionID);
+                setOnClicked();
             }}
         >
             { workExp.map((workExpUnit) => {

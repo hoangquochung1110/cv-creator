@@ -6,15 +6,17 @@ import {
     EducationWrapper, 
 } from "./Styles"
 
-const Education  = ({education, setSection}) => {
+
+const Education  = ({education, setSection, setOnClicked}) => {
 
     return (
         <EducationWrapper 
             className="education-section"
             onClick={(e) => {
                 console.log(e.target.closest(".education-unit").id);
-                const sectionID = e.target.closest(".education-unit").id
+                const sectionID = e.target.closest(".education-unit").id;
                 setSection(e, "education", sectionID);
+                setOnClicked();
             }}
         >
             { education.map((educationUnit) => {
