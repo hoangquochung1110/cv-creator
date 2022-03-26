@@ -1,42 +1,37 @@
-import { AddBtn, RemoveBtn } from "../../components/Buttons"; 
-import { OuterToolkitWrapper, InnerToolkitWrapper} from "./Style";
+import { AddBtn, RemoveBtn } from "../../components/Buttons";
+import { OuterToolkitWrapper, InnerToolkitWrapper } from "./Styles";
 import Select from "../../components/Selects";
 import { useEffect } from "react";
-
 
 const Toolkit = ({
     addSection,
     removeSection,
     setFontFamily,
     setFontSize,
-    onClicked
+    onClicked,
 }) => {
-
     useEffect(() => {
         // Set default value when onload
         document.querySelector("#font-family-selector").value = "Ubuntu";
         document.querySelector("#font-size-selector").value = "20px";
-    }, [])
+    }, []);
 
-
-    return(
+    return (
         <OuterToolkitWrapper>
             <InnerToolkitWrapper>
-                { onClicked ?
+                {onClicked ? (
                     <>
-                        <AddBtn addHandler={addSection}/>
-                        <RemoveBtn removeHandler={removeSection}/>
+                        <AddBtn addHandler={addSection} />
+                        <RemoveBtn removeHandler={removeSection} />
                     </>
-                    :
-                    null
-                }
+                ) : null}
                 <Select
                     id="font-family-selector"
                     options={[
-                        { value: 'Roboto', label: 'Roboto' },
-                        { value: 'Calibri', label: 'Calibri' },
-                        { value: 'Ubuntu', label: 'Ubuntu' },
-                        { value: 'Futara', label: 'Futara' }
+                        { value: "Roboto", label: "Roboto" },
+                        { value: "Calibri", label: "Calibri" },
+                        { value: "Ubuntu", label: "Ubuntu" },
+                        { value: "Futara", label: "Futara" },
                     ]}
                     onChange={(e) => {
                         setFontFamily(e.target.value);
@@ -52,11 +47,10 @@ const Toolkit = ({
                     onChange={(e) => {
                         setFontSize(e.target.value);
                     }}
-                >
-                </Select>
+                ></Select>
             </InnerToolkitWrapper>
         </OuterToolkitWrapper>
-    )
+    );
 };
 
 export default Toolkit;

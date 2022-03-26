@@ -1,16 +1,14 @@
-import { 
-    EducationUnitDescWrapper, 
-    EducationUnitHeaderWrapper, 
-    EducationUnitSubWrapper, 
-    EducationUnitWrapper, 
-    EducationWrapper, 
-} from "./Styles"
+import {
+    EducationUnitDescWrapper,
+    EducationUnitHeaderWrapper,
+    EducationUnitSubWrapper,
+    EducationUnitWrapper,
+    EducationWrapper,
+} from "./Styles";
 
-
-const Education  = ({education, setSection, setOnClicked}) => {
-
+const Education = ({ education, setSection, setOnClicked }) => {
     return (
-        <EducationWrapper 
+        <EducationWrapper
             className="education-section"
             onClick={(e) => {
                 console.log(e.target.closest(".education-unit").id);
@@ -19,25 +17,31 @@ const Education  = ({education, setSection, setOnClicked}) => {
                 setOnClicked();
             }}
         >
-            { education.map((educationUnit) => {
-                    return (
-                        <EducationUnit id={educationUnit.id} key={educationUnit.id} educationUnit={educationUnit}/>
-                    )
+            {education.map((educationUnit) => {
+                return (
+                    <EducationUnit
+                        id={educationUnit.id}
+                        key={educationUnit.id}
+                        educationUnit={educationUnit}
+                    />
+                );
             })}
         </EducationWrapper>
-    )
-}
+    );
+};
 
-const EducationUnit = ({id, educationUnit}) => {
+const EducationUnit = ({ id, educationUnit }) => {
     return (
         <EducationUnitWrapper id={id} className="education-unit">
             <EducationUnitHeaderWrapper>
                 <div contentEditable="true">{educationUnit.studyProgram}</div>
-                {educationUnit.eduFrom && educationUnit.eduTo ? 
-                    <div contentEditable="true">{educationUnit.eduFrom} - {educationUnit.eduTo}</div> 
-                : 
+                {educationUnit.eduFrom && educationUnit.eduTo ? (
+                    <div contentEditable="true">
+                        {educationUnit.eduFrom} - {educationUnit.eduTo}
+                    </div>
+                ) : (
                     <></>
-                }
+                )}
             </EducationUnitHeaderWrapper>
             <EducationUnitSubWrapper>
                 <div contentEditable="true">{educationUnit.eduName}</div>
@@ -47,7 +51,7 @@ const EducationUnit = ({id, educationUnit}) => {
                 {educationUnit.description}
             </EducationUnitDescWrapper>
         </EducationUnitWrapper>
-    )
-}
+    );
+};
 
 export default Education;
