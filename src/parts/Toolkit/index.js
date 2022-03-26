@@ -1,5 +1,5 @@
 import { AddBtn, RemoveBtn } from "../../components/Buttons";
-import { OuterToolkitWrapper, InnerToolkitWrapper } from "./Style";
+import { OuterToolkitWrapper, InnerToolkitWrapper } from "./Styles";
 import Select from "../../components/Selects";
 import { useEffect } from "react";
 

@@ -1,4 +1,4 @@
-import { HeaderWrapper, AppBrand } from "./Style";
+import { HeaderWrapper, AppBrand } from "./Styles";
 
 const Header = () => {
     return (

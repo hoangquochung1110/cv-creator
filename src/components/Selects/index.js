@@ -1,4 +1,4 @@
-import { SelectWrapper } from "./Style";
+import { SelectWrapper } from "./Styles";
 
 const Select = ({ id, options, onChange }) => {
     return (

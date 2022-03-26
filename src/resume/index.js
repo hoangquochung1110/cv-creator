@@ -1,6 +1,6 @@
 import Personal from "./Personal";
 import Qualification from "./Qualification";
-import ResumeWrapper from "./Style";
+import ResumeWrapper from "./Styles";
 
 const Resume = ({
     collection,
