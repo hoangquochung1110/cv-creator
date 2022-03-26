@@ -11,9 +11,9 @@ const SkillsWrapper = styled.div`
 `;
 
 const SkillsUnitWrapper = styled.div`
-border: 1px solid;
-border-radius: 10px;
-padding: 2px;
-`
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 2px;
+`;
 
-export { SkillsWrapper, SkillsUnitWrapper }
+export { SkillsWrapper, SkillsUnitWrapper };

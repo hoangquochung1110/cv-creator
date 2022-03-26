@@ -1,6 +1,6 @@
-import { SkillsUnitWrapper, SkillsWrapper } from "./Styles"
+import { SkillsUnitWrapper, SkillsWrapper } from "./Styles";
 
-const Skills = ({skills, setSection, setOnClicked}) => {
+const Skills = ({ skills, setSection, setOnClicked }) => {
     return (
         <SkillsWrapper
             className="skills-section"
@@ -11,16 +11,20 @@ const Skills = ({skills, setSection, setOnClicked}) => {
                 setOnClicked();
             }}
         >
-            { skills.map((skillsUnit) => {
-                    return (
-                        <SkillsUnit id={skillsUnit.id} key={skillsUnit.id} skillsUnit={skillsUnit}/>
-                    )
+            {skills.map((skillsUnit) => {
+                return (
+                    <SkillsUnit
+                        id={skillsUnit.id}
+                        key={skillsUnit.id}
+                        skillsUnit={skillsUnit}
+                    />
+                );
             })}
         </SkillsWrapper>
-    )
-}
+    );
+};
 
-const SkillsUnit = ({id, skillsUnit}) => {
+const SkillsUnit = ({ id, skillsUnit }) => {
     return (
         <SkillsUnitWrapper
             id={id}
@@ -29,7 +33,7 @@ const SkillsUnit = ({id, skillsUnit}) => {
         >
             {skillsUnit.name}
         </SkillsUnitWrapper>
-    )
-}
+    );
+};
 
 export default Skills;

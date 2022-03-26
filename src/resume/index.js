@@ -7,20 +7,20 @@ const Resume = ({
     fontFamily,
     fontSize,
     setSection,
-    setOnClicked
+    setOnClicked,
 }) => {
     return (
         <ResumeWrapper fontSize={fontSize} fontFamily={fontFamily}>
             <Personal personal={collection.personal} />
-            <Qualification 
-                education={collection.education} 
-                workExp={collection.workExp} 
+            <Qualification
+                education={collection.education}
+                workExp={collection.workExp}
                 skills={collection.skills}
                 setSection={setSection}
                 setOnClicked={setOnClicked}
             />
         </ResumeWrapper>
-    )
-}
+    );
+};
 
 export default Resume;

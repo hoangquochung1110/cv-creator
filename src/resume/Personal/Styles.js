@@ -6,9 +6,9 @@ const PersonalWrapper = styled.div`
 
 const PersonalInfoStyle = styled.div`
     text-align: center;
-`
+`;
 const PersonalContactStyle = styled.div`
     text-align: center;
-`
+`;
 
-export { PersonalWrapper, PersonalInfoStyle, PersonalContactStyle};
+export { PersonalWrapper, PersonalInfoStyle, PersonalContactStyle };
