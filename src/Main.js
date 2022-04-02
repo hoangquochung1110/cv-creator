@@ -10,7 +10,7 @@ const Main = () => {
     const [fontFamily, setFontFamily] = useState(null);
     const [fontSize, setFontSize] = useState(null);
     const [section, setSection] = useState({ name: null, id: null }); // determine which element to add/remove
-    const [onClicked, setOnClicked] = useState(false); // display add/remove btns if onClicked
+    const [onClicked, setOnClicked] = useState(false); // display add/remove button if onClicked
 
     const addEducationHandler = () => {
         setCollection((prevCollection) => ({
@@ -60,7 +60,7 @@ const Main = () => {
     const deleteWorkExpHandler = (id) => {
         setCollection((prevCollection) => {
             const newWorkExp = prevCollection.workExp.filter(
-                (newWorkExpUnit) => newWorkExpUnit.id !== id
+                (workExpUnit) => workExpUnit.id !== id
             );
             return { ...prevCollection, workExp: [...newWorkExp] };
         });
