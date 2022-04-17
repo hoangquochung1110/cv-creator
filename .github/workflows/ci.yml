@@ -1,0 +1,24 @@
+name: Testing
+on:
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
+
+jobs:
+    testing:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node: ["14", "16"]
+        steps:
+            - name: Clone repository
+              uses: actions/checkout@v2
+            - name: Set up Node
+              uses: actions/setup-node@v3
+              with:
+                  node-version: ${{ matrix.node }}
+            - name: Install dependencies
+              run: npm install
+            - name: Run tests
+              run: npm test src/tests
