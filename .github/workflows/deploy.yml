@@ -17,9 +17,10 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-
-      - name: Deploy
-        run: npm run deploy
+      - name: Build project
+        run: npm run build
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           pushish_dir: ./build
