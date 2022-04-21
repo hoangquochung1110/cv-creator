@@ -10,6 +10,7 @@ A side project to reinforce my understandings of React fundamentals (Components 
 
 ## Deploy with
 * gh-pages
+* GitHub Actions
 
 ## Project structure
 | File or folder | Description                    |
