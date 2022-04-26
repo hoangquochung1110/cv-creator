@@ -10,7 +10,11 @@ const Resume = ({
     setOnClicked,
 }) => {
     return (
-        <ResumeWrapper fontSize={fontSize} fontFamily={fontFamily}>
+        <ResumeWrapper
+            id="resume-container"
+            fontSize={fontSize}
+            fontFamily={fontFamily}
+        >
             <Personal personal={collection.personal} />
             <Qualification
                 education={collection.education}
