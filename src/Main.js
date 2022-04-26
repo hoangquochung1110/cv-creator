@@ -6,12 +6,6 @@ import styled from "styled-components";
 import { Header, Footer, Toolkit } from "./parts";
 
 
-
-import { useContext } from "react";
-
-
-
-
 const Main = () => {
     const [collection, setCollection] = useState(sampleCV); // data collection
     const [fontFamily, setFontFamily] = useState(null);
@@ -25,7 +19,7 @@ const Main = () => {
             education: [
                 ...prevCollection.education,
                 {
-                    id: uniqid(), 
+                    id: uniqid(),
                     studyProgram: "Study Program",
                     eduName: "Name of Education",
                     eduPlace: "Place of Education",
