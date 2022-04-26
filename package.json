@@ -33,8 +33,14 @@
     "extends": [
       "react-app",
       "react-app/jest",
-      "prettier"
-    ]
+      "prettier",
+      "eslint:recommended"
+    ],
+    "rules": {
+      "no-multiple-empty-lines": 2,
+      "no-trailing-spaces": 2,
+      "camelcase": 2
+    }
   },
   "browserslist": {
     "production": [
