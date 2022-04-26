@@ -5,6 +5,11 @@ import { sampleCV } from "./utils";
 import styled from "styled-components";
 import { Header, Footer, Toolkit } from "./parts";
 
+
+import { useContext } from "react";
+
+
+
 const Main = () => {
     const [collection, setCollection] = useState(sampleCV); // data collection
     const [fontFamily, setFontFamily] = useState(null);
